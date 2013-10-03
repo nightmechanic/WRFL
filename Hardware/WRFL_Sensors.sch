@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 10/2/2013 1:05:42 AM
+EESchema Schematic File Version 2  date Thursday, October 03, 2013 02:41:38 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 5 5
 Title ""
-Date ""
+Date "3 oct 2013"
 Rev ""
 Comp "Nightmechanic"
 Comment1 ""
@@ -45,4 +45,161 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L VDD_SENSORS U?
+U 1 1 524D591B
+P 6350 2550
+F 0 "U?" H 6350 2750 60  0001 C CNN
+F 1 "VDD_SENSORS" H 6350 2650 60  0000 C CNN
+F 2 "" H 6350 2550 60  0000 C CNN
+F 3 "" H 6350 2550 60  0000 C CNN
+	1    6350 2550
+	1    0    0    -1  
+$EndComp
+Text Label 3400 2950 0    60   ~ 0
+PM_ENABLE
+Wire Wire Line
+	2900 3200 2900 3250
+Wire Wire Line
+	2900 2750 2900 2800
+$Comp
+L GND #PWR?
+U 1 1 524D5924
+P 2900 3250
+F 0 "#PWR?" H 2900 3250 30  0001 C CNN
+F 1 "GND" H 2900 3180 30  0001 C CNN
+F 2 "" H 2900 3250 60  0000 C CNN
+F 3 "" H 2900 3250 60  0000 C CNN
+	1    2900 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 524D592A
+P 2900 3000
+F 0 "C?" H 2900 3100 40  0000 L CNN
+F 1 "1uF 10V" H 2906 2915 40  0000 L CNN
+F 2 "~" H 2938 2850 30  0000 C CNN
+F 3 "~" H 2900 3000 60  0000 C CNN
+	1    2900 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 3250 3350 3450
+Wire Wire Line
+	3500 3250 3350 3250
+Connection ~ 4100 3250
+Wire Wire Line
+	4000 3250 4100 3250
+$Comp
+L R R?
+U 1 1 524D5934
+P 3750 3250
+F 0 "R?" V 3830 3250 40  0000 C CNN
+F 1 "0Ohm" V 3757 3251 40  0000 C CNN
+F 2 "~" V 3680 3250 30  0000 C CNN
+F 3 "~" H 3750 3250 30  0000 C CNN
+	1    3750 3250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4100 2850 4100 3450
+Wire Wire Line
+	4250 2850 4100 2850
+Wire Wire Line
+	5300 3450 5300 3550
+Wire Wire Line
+	6000 3450 6000 3550
+$Comp
+L GND #PWR?
+U 1 1 524D593E
+P 3350 3450
+F 0 "#PWR?" H 3350 3450 30  0001 C CNN
+F 1 "GND" H 3350 3380 30  0001 C CNN
+F 2 "" H 3350 3450 60  0000 C CNN
+F 3 "" H 3350 3450 60  0000 C CNN
+	1    3350 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L AGND #PWR?
+U 1 1 524D5944
+P 4100 3450
+F 0 "#PWR?" H 4100 3450 40  0001 C CNN
+F 1 "AGND" H 4100 3380 50  0000 C CNN
+F 2 "" H 4100 3450 60  0000 C CNN
+F 3 "" H 4100 3450 60  0000 C CNN
+	1    4100 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L AGND #PWR?
+U 1 1 524D594A
+P 6000 3550
+F 0 "#PWR?" H 6000 3550 40  0001 C CNN
+F 1 "AGND" H 6000 3480 50  0000 C CNN
+F 2 "" H 6000 3550 60  0000 C CNN
+F 3 "" H 6000 3550 60  0000 C CNN
+	1    6000 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L AGND #PWR?
+U 1 1 524D5950
+P 5300 3550
+F 0 "#PWR?" H 5300 3550 40  0001 C CNN
+F 1 "AGND" H 5300 3480 50  0000 C CNN
+F 2 "" H 5300 3550 60  0000 C CNN
+F 3 "" H 5300 3550 60  0000 C CNN
+	1    5300 3550
+	1    0    0    -1  
+$EndComp
+Connection ~ 6000 2750
+Wire Wire Line
+	6000 2750 6000 3050
+$Comp
+L C C?
+U 1 1 524D5958
+P 6000 3250
+F 0 "C?" H 6000 3350 40  0000 L CNN
+F 1 "10uF 16V" H 6006 3165 40  0000 L CNN
+F 2 "~" H 6038 3100 30  0000 C CNN
+F 3 "~" H 6000 3250 60  0000 C CNN
+	1    6000 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 2950 5300 3050
+Wire Wire Line
+	4950 2950 5300 2950
+$Comp
+L C C?
+U 1 1 524D5960
+P 5300 3250
+F 0 "C?" H 5300 3350 40  0000 L CNN
+F 1 "0.01uF 25V" H 5306 3165 40  0000 L CNN
+F 2 "~" H 5338 3100 30  0000 C CNN
+F 3 "~" H 5300 3250 60  0000 C CNN
+	1    5300 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 2750 6350 2750
+Wire Wire Line
+	4250 2950 3300 2950
+Text Label 3550 2750 0    60   ~ 0
+VBAT_SW
+Wire Wire Line
+	2900 2750 4250 2750
+$Comp
+L TPS73633DBV U?
+U 1 1 524D596A
+P 4600 2850
+F 0 "U?" H 4450 3050 60  0000 C CNN
+F 1 "TPS73633DBV" H 4600 2650 60  0000 C CNN
+F 2 "" H 4600 2850 60  0000 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps73633.pdf" H 4650 2550 60  0001 C CNN
+	1    4600 2850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 10/2/2013 1:05:42 AM
+EESchema Schematic File Version 2  date Thursday, October 03, 2013 02:41:38 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 5
 Title "WRFL power management"
-Date "1 oct 2013"
+Date "3 oct 2013"
 Rev "1.0"
 Comp "Nightmechanic"
 Comment1 ""
@@ -387,124 +387,6 @@ Wire Wire Line
 Wire Wire Line
 	8400 1800 8400 2000
 $Comp
-L TPS73633DBV U?
-U 1 1 524B391F
-P 2900 4400
-F 0 "U?" H 2750 4600 60  0000 C CNN
-F 1 "TPS73633DBV" H 2900 4200 60  0000 C CNN
-F 2 "" H 2900 4400 60  0000 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tps73633.pdf" H 2950 4100 60  0001 C CNN
-	1    2900 4400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1200 4300 2550 4300
-Text Label 1850 4300 0    60   ~ 0
-VBAT_SW
-Wire Wire Line
-	2550 4500 1600 4500
-Wire Wire Line
-	3250 4300 4650 4300
-$Comp
-L C C?
-U 1 1 524B39BC
-P 3600 4800
-F 0 "C?" H 3600 4900 40  0000 L CNN
-F 1 "0.01uF 25V" H 3606 4715 40  0000 L CNN
-F 2 "~" H 3638 4650 30  0000 C CNN
-F 3 "~" H 3600 4800 60  0000 C CNN
-	1    3600 4800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3250 4500 3600 4500
-Wire Wire Line
-	3600 4500 3600 4600
-$Comp
-L C C?
-U 1 1 524B3A2B
-P 4300 4800
-F 0 "C?" H 4300 4900 40  0000 L CNN
-F 1 "10uF 16V" H 4306 4715 40  0000 L CNN
-F 2 "~" H 4338 4650 30  0000 C CNN
-F 3 "~" H 4300 4800 60  0000 C CNN
-	1    4300 4800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4300 4300 4300 4600
-Connection ~ 4300 4300
-$Comp
-L AGND #PWR?
-U 1 1 524B3BD6
-P 3600 5100
-F 0 "#PWR?" H 3600 5100 40  0001 C CNN
-F 1 "AGND" H 3600 5030 50  0000 C CNN
-F 2 "" H 3600 5100 60  0000 C CNN
-F 3 "" H 3600 5100 60  0000 C CNN
-	1    3600 5100
-	1    0    0    -1  
-$EndComp
-$Comp
-L AGND #PWR?
-U 1 1 524B3BE5
-P 4300 5100
-F 0 "#PWR?" H 4300 5100 40  0001 C CNN
-F 1 "AGND" H 4300 5030 50  0000 C CNN
-F 2 "" H 4300 5100 60  0000 C CNN
-F 3 "" H 4300 5100 60  0000 C CNN
-	1    4300 5100
-	1    0    0    -1  
-$EndComp
-$Comp
-L AGND #PWR?
-U 1 1 524B3BF4
-P 2400 5000
-F 0 "#PWR?" H 2400 5000 40  0001 C CNN
-F 1 "AGND" H 2400 4930 50  0000 C CNN
-F 2 "" H 2400 5000 60  0000 C CNN
-F 3 "" H 2400 5000 60  0000 C CNN
-	1    2400 5000
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 524B3C03
-P 1650 5000
-F 0 "#PWR?" H 1650 5000 30  0001 C CNN
-F 1 "GND" H 1650 4930 30  0001 C CNN
-F 2 "" H 1650 5000 60  0000 C CNN
-F 3 "" H 1650 5000 60  0000 C CNN
-	1    1650 5000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4300 5000 4300 5100
-Wire Wire Line
-	3600 5000 3600 5100
-Wire Wire Line
-	2550 4400 2400 4400
-Wire Wire Line
-	2400 4400 2400 5000
-$Comp
-L R R?
-U 1 1 524B3CB1
-P 2050 4800
-F 0 "R?" V 2130 4800 40  0000 C CNN
-F 1 "0Ohm" V 2057 4801 40  0000 C CNN
-F 2 "~" V 1980 4800 30  0000 C CNN
-F 3 "~" H 2050 4800 30  0000 C CNN
-	1    2050 4800
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	2300 4800 2400 4800
-Connection ~ 2400 4800
-Wire Wire Line
-	1800 4800 1650 4800
-Wire Wire Line
-	1650 4800 1650 5000
-$Comp
 L TPS73633DCQ U?
 U 1 1 524B3D49
 P 2700 6100
@@ -524,17 +406,6 @@ F 1 "0.01uF 25V" H 3606 6415 40  0000 L CNN
 F 2 "~" H 3638 6350 30  0000 C CNN
 F 3 "~" H 3600 6500 60  0000 C CNN
 	1    3600 6500
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 524B3D8B
-P 1200 4550
-F 0 "C?" H 1200 4650 40  0000 L CNN
-F 1 "1uF 10V" H 1206 4465 40  0000 L CNN
-F 2 "~" H 1238 4400 30  0000 C CNN
-F 3 "~" H 1200 4550 60  0000 C CNN
-	1    1200 4550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -595,17 +466,6 @@ Wire Wire Line
 	3600 6700 3600 6750
 $Comp
 L GND #PWR?
-U 1 1 524B3EF1
-P 1200 4800
-F 0 "#PWR?" H 1200 4800 30  0001 C CNN
-F 1 "GND" H 1200 4730 30  0001 C CNN
-F 2 "" H 1200 4800 60  0000 C CNN
-F 3 "" H 1200 4800 60  0000 C CNN
-	1    1200 4800
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
 U 1 1 524B3F00
 P 1300 6450
 F 0 "#PWR?" H 1300 6450 30  0001 C CNN
@@ -621,14 +481,8 @@ Wire Wire Line
 	2250 5950 1300 5950
 Wire Wire Line
 	1300 5950 1300 6000
-Wire Wire Line
-	1200 4300 1200 4350
-Wire Wire Line
-	1200 4750 1200 4800
 Text Label 1650 5950 0    60   ~ 0
 VBAT_SW
-Text Label 1700 4500 0    60   ~ 0
-PM_ENABLE
 Wire Wire Line
 	2250 6100 1550 6100
 Text Label 1650 6100 0    60   ~ 0
@@ -675,17 +529,6 @@ F 1 "VDD_MCU" H 9200 1200 60  0000 C CNN
 F 2 "" H 9200 1100 60  0000 C CNN
 F 3 "" H 9200 1100 60  0000 C CNN
 	1    9200 1100
-	1    0    0    -1  
-$EndComp
-$Comp
-L VDD_SENSORS U?
-U 1 1 524B449F
-P 4650 4100
-F 0 "U?" H 4650 4300 60  0001 C CNN
-F 1 "VDD_SENSORS" H 4650 4200 60  0000 C CNN
-F 2 "" H 4650 4100 60  0000 C CNN
-F 3 "" H 4650 4100 60  0000 C CNN
-	1    4650 4100
 	1    0    0    -1  
 $EndComp
 $Comp
