@@ -1,0 +1,76 @@
+eeschema (2013-04-19 BZR 4011)-stable  >> Creation date: 10/7/2013 2:15:53 AM
+
+#Cmp ( order = Value )
+| 680pF        C8        ; ~           ; ~           
+| 0.01uF 25V   C3        ; ~           ; ~           
+| 0.01uF 25V   C12       ; ~           ; ~           
+| 0.47uF 16V   C11       ; ~           ; ~           
+| 0.47uF 10V   C18       ; ~           ; ~           
+| 1uF 10V      C1        ; ~           ; ~           
+| 1uF 10V      C2        ; ~           ; ~           
+| 1uF 10V      C4        ; ~           ; ~           
+| 1uF 10V      C5        ; ~           ; ~           
+| 1uF 10V      C10       ; ~           ; ~           
+| 1uF 10V      C14       ; ~           ; ~           
+| 1uF 10V      C17       ; ~           ; ~           
+| 10uF 16V     C6        ; ~           ; ~           
+| 10uF 16V     C7        ; ~           ; ~           
+| 10uF 16V     C9        ; ~           ; ~           
+| 10uF 16V     C13       ; ~           ; ~           
+| 10uF 16V     C15       ; ~           ; ~           
+| 10uF 16V     C16       ; ~           ; ~           
+| BAS40-05-V   D1        ;             ; http://www.vishay.com/docs/85701/bas40v.pdf
+| CMS06        D2        ; ~           ; ~           
+| 10uH 60mOhm 3A L1        ; ~           ; ~           
+| JST_XH_2     P1        ;             ;             
+| TEST_POINT   P2        ;             ;             
+| TEST_POINT   P3        ;             ;             
+| JST_XH_2     P4        ;             ;             
+| TEST_POINT   P5        ;             ;             
+| TEST_POINT   P6        ;             ;             
+| TEST_POINT   P7        ;             ;             
+| 1x2_2.54_Fem P8        ;             ;             
+| TEST_POINT   P9        ;             ;             
+| TEST_POINT   P10       ;             ;             
+| TEST_POINT   P11       ;             ;             
+| JST_XH_8     P12       ;             ;             
+| LAUNCHPAD_J1_J3 P13       ;             ;             
+| LAUNCHPAD_J2_J4 P14       ;             ;             
+| 1x8_2_54_FEM P15       ;             ;             
+| SI1012CR     Q1        ;             ; http://www.vishay.com/docs/67519/si1012cr.pdf
+| SI2333DDS    Q2        ;             ; http://www.vishay.com/docs/63861/si2333dds.pdf
+| SI1012CR     Q3        ; ~           ; http://www.vishay.com/docs/67519/si1012cr.pdf
+| 825          R3        ; ~           ; ~           
+| 2k           R4        ; ~           ; ~           
+| 9.09k_0.1%   R1        ; ~           ; ~           
+| 9.09k_0.1%   R2        ; ~           ; ~           
+| 10k          R9        ; ~           ; ~           
+| 10k          R14       ; ~           ; ~           
+| 31.6k        R8        ; ~           ; ~           
+| 100k         R5        ; ~           ; ~           
+| 100k         R6        ; ~           ; ~           
+| 100k         R10       ; ~           ; ~           
+| 100k         R12       ; ~           ; ~           
+| 100k         R13       ; ~           ; ~           
+| 100k         R15       ; ~           ; ~           
+| 100k         R16       ; ~           ; ~           
+| 100k         R17       ; ~           ; ~           
+| 100k         R18       ; ~           ; ~           
+| 1M           R7        ; ~           ; ~           
+| 0Ohm         R11       ; ~           ; ~           
+| TSA12110     SW1       ;             ;             
+| EN11-HSB     SW2       ;             ;             
+| TSA12110     SW3       ;             ;             
+| TPS73633DCQ  U1        ;             ; http://www.ti.com/lit/ds/symlink/tps73633.pdf
+| TPS78233DDC  U2        ;             ; http://www.ti.com/lit/ds/symlink/tps78233.pdf
+| BQ24092DGQ   U3        ;             ; http://www.ti.com/lit/ds/symlink/bq24092.pdf
+| TPS73633DBV  U5        ;             ; http://www.ti.com/lit/ds/symlink/tps73633.pdf
+| MS5611-01BA03 U6        ;             ;             
+| S25FL216K0PMFI040 U9        ;             ;             
+| LM2735Y      U4        ; ~           ; http://www.ti.com/lit/ds/symlink/lm2735.pdf
+| VDD_PERIPH   U7        ; ~           ; ~           
+| VDD_PERIPH   U8        ; ~           ; ~           
+| VDD_PERIPH   U10       ; ~           ; ~           
+#End Cmp
+
+#End List

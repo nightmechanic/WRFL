@@ -1,0 +1,11 @@
+EESchema-DOCLIB  Version 2.0  Date: 10/7/2013 2:25:41 AM
+#
+$CMP SI1012CR
+F http://www.vishay.com/docs/67519/si1012cr.pdf
+$ENDCMP
+#
+$CMP SI2333DDS
+F http://www.vishay.com/docs/63861/si2333dds.pdf
+$ENDCMP
+#
+#End Doc Library
