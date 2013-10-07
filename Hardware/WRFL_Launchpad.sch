@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 10/7/2013 2:32:38 AM
+EESchema Schematic File Version 2  date 10/7/2013 7:37:21 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 5
 Title ""
-Date "6 oct 2013"
+Date "7 oct 2013"
 Rev ""
 Comp "Nightmechanic"
 Comment1 ""
@@ -124,7 +124,7 @@ Text GLabel 6300 2850 0    60   Input ~ 0
 QUAD_ENC_A
 Text GLabel 6300 3050 0    60   Input ~ 0
 QUAD_ENC_B
-Text GLabel 6300 3250 0    60   Input ~ 0
+Text GLabel 10150 2250 0    60   Input ~ 0
 USER_SW
 Text GLabel 8200 2250 0    60   Input ~ 0
 LCD_LED_CTRL
@@ -143,4 +143,102 @@ LCD_C_D
 Text GLabel 9050 2850 0    60   Input ~ 0
 FLASH_CS
 NoConn ~ 2550 3950
+Text GLabel 8300 3150 0    60   Input ~ 0
+SERVO1_CTRL
+Text GLabel 9250 3200 0    60   Input ~ 0
+SERVO2_CTRL
+Text GLabel 10200 2600 0    60   Input ~ 0
+VREF_SENS
+$Comp
+L REF3312 U11
+U 1 1 525244B8
+P 1800 1300
+F 0 "U11" H 1600 1450 60  0000 C CNN
+F 1 "REF3312" H 2000 1100 60  0000 C CNN
+F 2 "~" H 1800 1300 60  0000 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ref3312.pdf" H 1800 1650 60  0001 C CNN
+	1    1800 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C19
+U 1 1 525246BE
+P 1150 1650
+F 0 "C19" H 1150 1750 40  0000 L CNN
+F 1 "0.47uF 16V" H 1156 1565 40  0000 L CNN
+F 2 "0805" H 1188 1500 30  0001 C CNN
+F 3 "~" H 1150 1650 60  0000 C CNN
+	1    1150 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L VDD_MCU U10
+U 1 1 525246DC
+P 1150 900
+F 0 "U10" H 1150 1100 60  0001 C CNN
+F 1 "VDD_MCU" H 1150 1000 60  0000 C CNN
+F 2 "~" H 1150 900 60  0000 C CNN
+F 3 "~" H 1150 900 60  0000 C CNN
+	1    1150 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR26
+U 1 1 525246EB
+P 1150 1950
+F 0 "#PWR26" H 1150 1950 30  0001 C CNN
+F 1 "GND" H 1150 1880 30  0001 C CNN
+F 2 "" H 1150 1950 60  0000 C CNN
+F 3 "" H 1150 1950 60  0000 C CNN
+	1    1150 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR27
+U 1 1 525246FA
+P 1800 1750
+F 0 "#PWR27" H 1800 1750 30  0001 C CNN
+F 1 "GND" H 1800 1680 30  0001 C CNN
+F 2 "" H 1800 1750 60  0000 C CNN
+F 3 "" H 1800 1750 60  0000 C CNN
+	1    1800 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR28
+U 1 1 52524709
+P 2650 1850
+F 0 "#PWR28" H 2650 1850 30  0001 C CNN
+F 1 "GND" H 2650 1780 30  0001 C CNN
+F 2 "" H 2650 1850 60  0000 C CNN
+F 3 "" H 2650 1850 60  0000 C CNN
+	1    2650 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 1100 1150 1450
+Wire Wire Line
+	1150 1850 1150 1950
+Wire Wire Line
+	1400 1250 1150 1250
+Connection ~ 1150 1250
+Wire Wire Line
+	1800 1600 1800 1750
+Wire Wire Line
+	2200 1250 2650 1250
+Wire Wire Line
+	2650 1250 2650 1350
+Wire Wire Line
+	2650 1750 2650 1850
+$Comp
+L C C20
+U 1 1 52524762
+P 2650 1550
+F 0 "C20" H 2650 1650 40  0000 L CNN
+F 1 "0.47uF 16V" H 2656 1465 40  0000 L CNN
+F 2 "0805" H 2688 1400 30  0001 C CNN
+F 3 "~" H 2650 1550 60  0000 C CNN
+	1    2650 1550
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
