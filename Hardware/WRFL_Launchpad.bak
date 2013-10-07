@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, October 07, 2013 09:12:37 AM
+EESchema Schematic File Version 2  date Monday, October 07, 2013 12:51:29 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -172,10 +172,10 @@ F 3 "~" H 1150 1650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VDD_MCU U10
+L VDD_MCU #U10
 U 1 1 525246DC
 P 1150 900
-F 0 "U10" H 1150 1100 60  0001 C CNN
+F 0 "#U10" H 1150 1100 60  0001 C CNN
 F 1 "VDD_MCU" H 1150 1000 60  0000 C CNN
 F 2 "~" H 1150 900 60  0000 C CNN
 F 3 "~" H 1150 900 60  0000 C CNN
