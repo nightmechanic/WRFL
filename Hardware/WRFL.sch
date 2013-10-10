@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, October 07, 2013 12:52:48 PM
+EESchema Schematic File Version 2  date 10/11/2013 1:57:23 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title "WRFL Main"
-Date "7 oct 2013"
+Date "10 oct 2013"
 Rev "1.0"
 Comp "Nightmechanic"
 Comment1 ""
@@ -46,27 +46,33 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 1450 1050 2150 1000
+S 1450 1050 2450 1000
 U 524B45AC
-F0 "Power Management" 50
-F1 "WRFL_power_management.sch" 50
+F0 "Power Management" 118
+F1 "WRFL_power_management.sch" 118
 $EndSheet
 $Sheet
-S 5250 1050 1900 1050
+S 5250 1050 2750 1000
 U 524B4775
-F0 "Launchpad connections" 50
-F1 "WRFL_Launchpad.sch" 50
+F0 "Launchpad connections" 118
+F1 "WRFL_Launchpad.sch" 118
 $EndSheet
 $Sheet
-S 1650 2950 2100 1100
+S 1450 2950 2450 1100
 U 524B49CB
-F0 "User Interface" 50
-F1 "WRFL_User_Interface.sch" 50
+F0 "User Interface" 118
+F1 "WRFL_User_Interface.sch" 118
 $EndSheet
 $Sheet
-S 5300 2850 1900 1150
+S 5250 2950 2750 1200
 U 524B49CD
-F0 "Sensors" 50
-F1 "WRFL_Sensors.sch" 50
+F0 "Sensors" 118
+F1 "WRFL_Sensors.sch" 118
+$EndSheet
+$Sheet
+S 1450 4750 2450 1250
+U 52571324
+F0 "Bluetooth" 118
+F1 "WRFL_BT.sch" 118
 $EndSheet
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, October 07, 2013 12:51:29 PM
+EESchema Schematic File Version 2  date 10/11/2013 1:56:12 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 5
+Sheet 3 6
 Title ""
-Date "7 oct 2013"
+Date "10 oct 2013"
 Rev ""
 Comp "Nightmechanic"
 Comment1 ""
@@ -58,10 +58,10 @@ F 3 "" H 5900 1550 60  0000 C CNN
 $EndComp
 NoConn ~ 5550 1650
 $Comp
-L VDD_MCU #U11
+L VDD_MCU #U12
 U 1 1 524B47E3
 P 5200 1100
-F 0 "#U11" H 5200 1300 60  0001 C CNN
+F 0 "#U12" H 5200 1300 60  0001 C CNN
 F 1 "VDD_MCU" H 5200 1200 60  0000 C CNN
 F 2 "~" H 5200 1100 60  0000 C CNN
 F 3 "~" H 5200 1100 60  0000 C CNN
@@ -172,10 +172,10 @@ F 3 "~" H 1150 1650 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VDD_MCU #U10
+L VDD_MCU #U11
 U 1 1 525246DC
 P 1150 900
-F 0 "#U10" H 1150 1100 60  0001 C CNN
+F 0 "#U11" H 1150 1100 60  0001 C CNN
 F 1 "VDD_MCU" H 1150 1000 60  0000 C CNN
 F 2 "~" H 1150 900 60  0000 C CNN
 F 3 "~" H 1150 900 60  0000 C CNN
@@ -225,7 +225,7 @@ Connection ~ 1150 1250
 Wire Wire Line
 	1800 1600 1800 1750
 Wire Wire Line
-	2200 1250 2650 1250
+	2200 1250 3150 1250
 Wire Wire Line
 	2650 1250 2650 1350
 Wire Wire Line
@@ -243,4 +243,15 @@ F 3 "~" H 2650 1550 60  0000 C CNN
 $EndComp
 Text GLabel 10150 2850 0    60   Input ~ 0
 MEAS_EN
+Text GLabel 10150 3050 0    60   Input ~ 0
+BT_UART_TX
+Text GLabel 10100 3350 0    60   Input ~ 0
+BT_UART_RX
+Text GLabel 11000 2200 0    60   Input ~ 0
+BT_UART_RTS
+Text GLabel 11000 2450 0    60   Input ~ 0
+BT_UART_cTS
+Text GLabel 3150 1250 2    60   Input ~ 0
+VREF_SENS
+Connection ~ 2650 1250
 $EndSCHEMATC

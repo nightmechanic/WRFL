@@ -1,4 +1,10 @@
-EESchema-DOCLIB  Version 2.0  Date: 10/7/2013 2:25:41 AM
+EESchema-DOCLIB  Version 2.0  Date: 10/11/2013 1:15:35 AM
+#
+$CMP GENERIC_BT_MODULE
+D Generic Bluetooth module
+K Bluetooth, HC-05 , HC-06, HM-09, HM-10
+F ftp://imall.iteadstudio.com/IM120417010_BT_Shield_v2.2/DS_BluetoothHC05.pdf
+$ENDCMP
 #
 $CMP SI1012CR
 F http://www.vishay.com/docs/67519/si1012cr.pdf

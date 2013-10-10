@@ -1,6 +1,6 @@
-update=Monday, October 07, 2013 03:46:21 PM
+update=10/11/2013 1:57:28 AM
 version=1
-last_client=eeschema
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -43,8 +43,6 @@ LibName13=led
 LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=../WRFL
@@ -85,3 +83,5 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=WRFL
+[general]
+version=1
