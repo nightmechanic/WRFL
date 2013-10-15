@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 10/11/2013 1:57:23 AM
+EESchema Schematic File Version 2  date Tuesday, October 15, 2013 09:37:22 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 6
 Title ""
-Date "10 oct 2013"
+Date "15 oct 2013"
 Rev ""
 Comp "Nightmechanic"
 Comment1 ""
@@ -100,11 +100,11 @@ F 3 "" H 8400 2250 60  0000 C CNN
 	1    8250 2250
 	1    0    0    -1  
 $EndComp
-Text GLabel 1750 2500 3    60   Input ~ 0
+Text GLabel 1750 2800 3    60   Input ~ 0
 LCD_RST
-Text GLabel 1950 2500 3    60   Input ~ 0
+Text GLabel 1950 2800 3    60   Input ~ 0
 LCD_CS
-Text GLabel 2150 2500 3    60   Input ~ 0
+Text GLabel 2150 2800 3    60   Input ~ 0
 LCD_D_C
 Text GLabel 2350 2800 3    60   Input ~ 0
 GEN_SSI_TX
@@ -237,7 +237,11 @@ SPI_TX
 Wire Wire Line
 	9300 2050 8850 2050
 Wire Wire Line
-	9300 1750 9300 2200
+	9300 1750 9300 1850
+Wire Wire Line
+	9300 1850 9300 2050
+Wire Wire Line
+	9300 2050 9300 2200
 Wire Wire Line
 	9300 2200 8850 2200
 Connection ~ 9300 2050
@@ -294,7 +298,9 @@ F 3 "~" H 7300 1700 30  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6700 2050 7650 2050
+	6700 2050 7300 2050
+Wire Wire Line
+	7300 2050 7650 2050
 Wire Wire Line
 	7300 2050 7300 1950
 Wire Wire Line
@@ -313,7 +319,9 @@ Connection ~ 7300 2050
 Wire Wire Line
 	6550 6100 6500 6100
 Wire Wire Line
-	6500 6100 6500 6400
+	6500 6100 6500 6300
+Wire Wire Line
+	6500 6300 6500 6400
 Wire Wire Line
 	7350 6100 7450 6100
 Wire Wire Line
@@ -324,7 +332,9 @@ Connection ~ 6500 6300
 Wire Wire Line
 	2400 6000 2600 6000
 Wire Wire Line
-	2600 6000 2600 6250
+	2600 6000 2600 6150
+Wire Wire Line
+	2600 6150 2600 6250
 Wire Wire Line
 	2600 6150 1450 6150
 Wire Wire Line
@@ -338,8 +348,6 @@ Text GLabel 1200 5600 0    60   Input ~ 0
 WAKE_SW
 Text GLabel 3650 4950 0    60   Input ~ 0
 ON_SW_FET
-Text GLabel 3150 6800 0    60   Input ~ 0
-PM_ENABLE
 Text GLabel 4000 6000 0    60   Input ~ 0
 QUAD_ENC_A
 Text GLabel 4950 6000 2    60   Input ~ 0
@@ -347,7 +355,9 @@ QUAD_ENC_B
 Text GLabel 6200 5700 0    60   Input ~ 0
 USER_SW
 Wire Wire Line
-	6200 5700 6550 5700
+	6200 5700 6350 5700
+Wire Wire Line
+	6350 5700 6550 5700
 Wire Wire Line
 	7350 5700 7500 5700
 Wire Wire Line
@@ -358,15 +368,21 @@ Wire Wire Line
 	6350 5300 6350 5700
 Connection ~ 6350 5700
 Wire Wire Line
-	1200 5600 1600 5600
+	1200 5600 1500 5600
+Wire Wire Line
+	1500 5600 1600 5600
 Wire Wire Line
 	4450 5750 4450 5950
 Wire Wire Line
-	4700 5750 4700 6200
+	4700 5750 4700 6000
+Wire Wire Line
+	4700 6000 4700 6200
 Wire Wire Line
 	4700 6000 4950 6000
 Wire Wire Line
-	4200 5750 4200 6200
+	4200 5750 4200 6000
+Wire Wire Line
+	4200 6000 4200 6200
 Wire Wire Line
 	4200 6000 4000 6000
 $Comp
@@ -394,7 +410,9 @@ $EndComp
 Connection ~ 4200 6000
 Connection ~ 4700 6000
 Wire Wire Line
-	3150 6800 4700 6800
+	3150 6800 4200 6800
+Wire Wire Line
+	4200 6800 4700 6800
 Wire Wire Line
 	4700 6800 4700 6700
 Wire Wire Line
@@ -538,11 +556,11 @@ Wire Wire Line
 Wire Wire Line
 	2350 2800 2350 2300
 Wire Wire Line
-	2150 2300 2150 2500
+	2150 2300 2150 2800
 Wire Wire Line
-	1950 2500 1950 2300
+	1950 2800 1950 2300
 Wire Wire Line
-	1750 2300 1750 2500
+	1750 2300 1750 2800
 Text Label 2350 2700 1    60   ~ 0
 SPI_TX
 Wire Wire Line
@@ -550,7 +568,9 @@ Wire Wire Line
 Wire Wire Line
 	2750 3650 950  3650
 Wire Wire Line
-	950  3550 950  3800
+	950  3550 950  3650
+Wire Wire Line
+	950  3650 950  3800
 Connection ~ 950  3650
 Wire Wire Line
 	2300 4000 2650 4000
@@ -561,9 +581,22 @@ Wire Wire Line
 Wire Wire Line
 	2950 4200 2950 4350
 Wire Wire Line
-	5950 1350 5950 2350
+	5950 1350 5950 1400
+Wire Wire Line
+	5950 1400 5950 2350
 Connection ~ 5950 1400
 Wire Wire Line
 	10150 1850 9300 1850
 Connection ~ 9300 1850
+$Comp
+L VDD_PERIPH #U?
+U 1 1 525D7AAA
+P 3150 6600
+F 0 "#U?" H 3150 6800 60  0001 C CNN
+F 1 "VDD_PERIPH" H 3150 6700 60  0000 C CNN
+F 2 "~" H 3150 6600 60  0000 C CNN
+F 3 "~" H 3150 6600 60  0000 C CNN
+	1    3150 6600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

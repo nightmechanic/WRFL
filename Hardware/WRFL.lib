@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 10/11/2013 1:55:44 AM
+EESchema-LIBRARY Version 2.3  Date: Tuesday, October 15, 2013 09:34:44 AM
 #encoding utf-8
 #
 # 10X2_2_54_FEMALE
@@ -70,6 +70,27 @@ F0 "D" -50 250 60 H V C CNN
 F1 "BAS40-05-V" 0 -200 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "http://www.vishay.com/docs/85701/bas40v.pdf" -50 -300 60 H I C CNN
+DRAW
+P 2 0 1 0  -250 100  -100 100 f
+P 2 0 1 0  300 0  150 0 N
+P 4 0 1 0  -100 150  -100 50  0 100  -100 150 F
+P 4 0 1 0  -50 -50  0 -50  0 -150  50 -150 N
+P 4 0 1 0  -50 150  0 150  0 50  50 50 N
+P 5 0 1 0  0 -100  150 -100  150 0  150 100  0 100 N
+P 6 0 1 0  -250 -100  -100 -100  -100 -50  0 -100  -100 -150  -100 -100 F
+X A1 1 -400 100 150 R 40 40 1 1 P
+X A2 2 -400 -100 150 R 40 40 1 1 P
+X K 3 450 0 150 L 40 40 1 1 P
+ENDDRAW
+ENDDEF
+#
+# BAT54C-V
+#
+DEF BAT54C-V D 0 40 Y N 1 F N
+F0 "D" -50 250 60 H V C CNN
+F1 "BAT54C-V" 0 -200 60 H V C CNN
+F2 "SOT-23" 0 0 60 H I C CNN
+F3 "http://www.vishay.com/docs/85508/bat54v.pdf" -50 -300 60 H I C CNN
 DRAW
 P 2 0 1 0  -250 100  -100 100 f
 P 2 0 1 0  300 0  150 0 N

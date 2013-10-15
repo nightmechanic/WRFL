@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 10/11/2013 1:56:12 AM
+EESchema Schematic File Version 2  date Tuesday, October 15, 2013 09:37:12 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 6
 Title ""
-Date "10 oct 2013"
+Date "15 oct 2013"
 Rev ""
 Comp "Nightmechanic"
 Comment1 ""
@@ -57,10 +57,10 @@ F 3 "ftp://imall.iteadstudio.com/IM120417010_BT_Shield_v2.2/DS_BluetoothHC05.pdf
 	1    0    0    -1  
 $EndComp
 $Comp
-L VDD_PERIPH #U7
+L VDD_PERIPH #U23
 U 1 1 52571F8F
 P 2100 4600
-F 0 "#U7" H 2100 4800 60  0001 C CNN
+F 0 "#U23" H 2100 4800 60  0001 C CNN
 F 1 "VDD_PERIPH" H 2100 4700 60  0000 C CNN
 F 2 "~" H 2100 4600 60  0000 C CNN
 F 3 "~" H 2100 4600 60  0000 C CNN
@@ -134,10 +134,10 @@ F 3 "" H 7200 5250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VDD_PERIPH #U10
+L VDD_PERIPH #U24
 U 1 1 52571FF6
 P 8700 4500
-F 0 "#U10" H 8700 4700 60  0001 C CNN
+F 0 "#U24" H 8700 4700 60  0001 C CNN
 F 1 "VDD_PERIPH" H 8700 4600 60  0000 C CNN
 F 2 "~" H 8700 4500 60  0000 C CNN
 F 3 "~" H 8700 4500 60  0000 C CNN

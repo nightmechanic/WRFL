@@ -4,7 +4,7 @@
 1uF 10V	7	"C1 C2 C4 C5 C10 C14 C17"	0805	~
 1uF 16V	1	"C22"	0805	~
 10uF 16V	7	"C6 C7 C9 C13 C15 C16 C21"	0805	~
-BAS40-05-V	1	"D1"		http://www.vishay.com/docs/85701/bas40v.pdf
+BAT54C-V	1	"D1"	SOT-23	http://www.vishay.com/docs/85508/bat54v.pdf
 CMS06	1	"D2"	~	~
 NOKIA_5110_LCD	1	"DS1"		
 10uH 60mOhm 3A	1	"L1"	~	~

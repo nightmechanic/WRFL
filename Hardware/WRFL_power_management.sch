@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 10/11/2013 1:57:23 AM
+EESchema Schematic File Version 2  date Tuesday, October 15, 2013 09:37:22 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 6
 Title "WRFL power management"
-Date "10 oct 2013"
+Date "15 oct 2013"
 Rev "1.0"
 Comp "Nightmechanic"
 Comment1 ""
@@ -285,17 +285,6 @@ F 3 "~" H 1300 3150 30  0000 C CNN
 $EndComp
 Wire Wire Line
 	1300 2300 1300 2900
-$Comp
-L BAS40-05-V D1
-U 1 1 524B3606
-P 5100 2900
-F 0 "D1" H 5050 3150 60  0000 C CNN
-F 1 "BAS40-05-V" H 5100 2700 60  0000 C CNN
-F 2 "" H 5100 2900 60  0000 C CNN
-F 3 "http://www.vishay.com/docs/85701/bas40v.pdf" H 5050 2600 60  0001 C CNN
-	1    5100 2900
-	1    0    0    -1  
-$EndComp
 Connection ~ 6050 2900
 Wire Wire Line
 	1300 2800 4700 2800
@@ -1191,4 +1180,15 @@ Wire Wire Line
 Wire Wire Line
 	1050 6650 1050 6550
 Connection ~ 1050 6550
+$Comp
+L BAT54C-V D1
+U 1 1 525D7621
+P 5100 2900
+F 0 "D1" H 5050 3150 60  0000 C CNN
+F 1 "BAT54C-V" H 5100 2700 60  0000 C CNN
+F 2 "SOT-23" H 5100 2900 60  0001 C CNN
+F 3 "http://www.vishay.com/docs/85508/bat54v.pdf" H 5050 2600 60  0001 C CNN
+	1    5100 2900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
