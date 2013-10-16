@@ -1,7 +1,10 @@
 This is the reposirory for my Water Rocket flight logger a.k.a WRFL.
-The WRFL project is based on the Texas Instruments' TM4C123G LaunchPad.
+
+The WRFL project is based on the Texas Instruments' TM4C123GXL LaunchPad.
 The project will (hopefully...) consist of HW development of a dedicated "BoosterPack" ( a shield for all you Arduino fans) and acompanying Firmware.
 
 The BoosterPack will have a barometer for altitude measurments, an accelerometer, flash memory, LCD dispaly and buttons for UI, servo connectors, baterry charger and required power management.
 
 The firmware will run all the above :)
+
+For more info read the [wiki](https://github.com/nightmechanic/WRFL/wiki)!
