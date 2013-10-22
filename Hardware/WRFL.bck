@@ -1,4 +1,10 @@
-EESchema-DOCLIB  Version 2.0  Date: 10/11/2013 1:55:44 AM
+EESchema-DOCLIB  Version 2.0  Date: Tuesday, October 22, 2013 03:52:04 AM
+#
+$CMP BAT54C-V
+D Dual Schotkky diode, common cathode, SOT-53
+K bat54c
+F http://www.vishay.com/docs/85508/bat54v.pdf
+$ENDCMP
 #
 $CMP GENERIC_BT_MODULE
 D Generic Bluetooth module
