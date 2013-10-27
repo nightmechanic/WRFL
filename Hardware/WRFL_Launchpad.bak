@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday, October 22, 2013 04:00:51 AM
+EESchema Schematic File Version 2  date Sunday, October 27, 2013 'AMt' 10:59:27 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 6
 Title ""
-Date "22 oct 2013"
+Date "27 oct 2013"
 Rev ""
 Comp "Nightmechanic"
 Comment1 ""
@@ -203,7 +203,9 @@ F 3 "" H 2650 1850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1150 1100 1150 1450
+	1150 1100 1150 1250
+Wire Wire Line
+	1150 1250 1150 1450
 Wire Wire Line
 	1150 1850 1150 1950
 Wire Wire Line
@@ -212,7 +214,9 @@ Connection ~ 1150 1250
 Wire Wire Line
 	1800 1600 1800 1750
 Wire Wire Line
-	2200 1250 3150 1250
+	2200 1250 2650 1250
+Wire Wire Line
+	2650 1250 3150 1250
 Wire Wire Line
 	2650 1250 2650 1350
 Wire Wire Line
@@ -228,7 +232,7 @@ F 3 "~" H 2650 1550 60  0000 C CNN
 	1    2650 1550
 	1    0    0    -1  
 $EndComp
-Text GLabel 4450 5550 2    60   Input ~ 0
+Text GLabel 1900 5750 0    60   Input ~ 0
 MEAS_EN
 Text GLabel 1950 4550 0    60   Input ~ 0
 BT_UART_TX
@@ -291,7 +295,9 @@ F 3 "" H 4300 4200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3850 4150 4600 4150
+	3850 4150 4300 4150
+Wire Wire Line
+	4300 4150 4600 4150
 Wire Wire Line
 	4300 4150 4300 4200
 Wire Wire Line
@@ -332,8 +338,6 @@ Wire Wire Line
 Wire Wire Line
 	4450 5350 3850 5350
 Wire Wire Line
-	3850 5550 4450 5550
-Wire Wire Line
 	4450 5750 3850 5750
 Wire Wire Line
 	9900 4150 9300 4150
@@ -352,7 +356,6 @@ Wire Wire Line
 NoConn ~ 9300 5350
 NoConn ~ 9300 5550
 NoConn ~ 8000 4550
-NoConn ~ 2550 5750
 Wire Wire Line
 	9900 5750 9300 5750
 $Comp
@@ -380,4 +383,10 @@ $EndComp
 Wire Wire Line
 	4600 4150 4600 4000
 Connection ~ 4300 4150
+Wire Wire Line
+	3850 5550 4450 5550
+Text GLabel 4450 5550 2    60   Input ~ 0
+BAT_TEMP_SENS
+Wire Wire Line
+	2550 5750 1900 5750
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday, October 22, 2013 02:02:38 PM
+EESchema Schematic File Version 2  date Sunday, October 27, 2013 'AMt' 10:59:49 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 6
 Title "WRFL Main"
-Date "22 oct 2013"
+Date "27 oct 2013"
 Rev "1.0"
 Comp "Nightmechanic"
 Comment1 ""
