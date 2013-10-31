@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, October 27, 2013 'AMt' 10:59:49 AM
+EESchema Schematic File Version 2  date 10/31/2013 11:19:55 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 6
 Title "WRFL power management"
-Date "27 oct 2013"
+Date "31 oct 2013"
 Rev "1.0"
 Comp "Nightmechanic"
 Comment1 ""
@@ -134,7 +134,15 @@ F 3 "http://www.ti.com/lit/ds/symlink/tps78233.pdf" H 8700 5850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3500 1300 6550 1300
+	3500 1300 4300 1300
+Wire Wire Line
+	4300 1300 5700 1300
+Wire Wire Line
+	5700 1300 5900 1300
+Wire Wire Line
+	5900 1300 6200 1300
+Wire Wire Line
+	6200 1300 6550 1300
 Wire Wire Line
 	6200 1400 6200 1300
 Connection ~ 6200 1300
@@ -142,9 +150,11 @@ Wire Wire Line
 	4300 1150 4300 1300
 Connection ~ 4300 1300
 Wire Wire Line
-	5000 1150 5000 1450
+	5000 1450 5000 1150
 Wire Wire Line
-	6750 1600 6750 2700
+	6750 1600 6750 2050
+Wire Wire Line
+	6750 2050 6750 2700
 Wire Wire Line
 	6200 1900 6200 2050
 $Comp
@@ -203,13 +213,17 @@ F 3 "" H 3050 2250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5550 2900 6450 2900
+	5550 2900 6050 2900
+Wire Wire Line
+	6050 2900 6450 2900
 Wire Wire Line
 	6050 2900 6050 3050
 Wire Wire Line
 	6750 3100 6750 3650
 Wire Wire Line
-	7150 6050 8300 6050
+	7150 6050 7950 6050
+Wire Wire Line
+	7950 6050 8300 6050
 Text Label 5450 1300 0    60   ~ 0
 VBAT
 Wire Wire Line
@@ -246,7 +260,11 @@ Wire Wire Line
 Wire Wire Line
 	8150 6150 8150 6200
 Wire Wire Line
-	9000 6050 10550 6050
+	9000 6050 9550 6050
+Wire Wire Line
+	9550 6050 10350 6050
+Wire Wire Line
+	10350 6050 10550 6050
 $Comp
 L CONN_1 P2
 U 1 1 524B3040
@@ -284,10 +302,14 @@ F 3 "~" H 1300 3150 30  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1300 2300 1300 2900
+	1300 2300 1300 2800
+Wire Wire Line
+	1300 2800 1300 2900
 Connection ~ 6050 2900
 Wire Wire Line
-	1300 2800 4700 2800
+	1300 2800 2350 2800
+Wire Wire Line
+	2350 2800 4700 2800
 $Comp
 L GND #PWR3
 U 1 1 524B3660
@@ -302,7 +324,11 @@ $EndComp
 Wire Wire Line
 	1300 3400 1300 3600
 Wire Wire Line
-	950  1300 2600 1300
+	950  1300 1300 1300
+Wire Wire Line
+	1300 1300 1550 1300
+Wire Wire Line
+	1550 1300 2600 1300
 Wire Wire Line
 	1300 1300 1300 1800
 Connection ~ 1300 1300
@@ -409,7 +435,11 @@ Wire Wire Line
 Wire Wire Line
 	3200 4550 3200 4750
 Wire Wire Line
-	2800 4400 5000 4400
+	2800 4400 3750 4400
+Wire Wire Line
+	3750 4400 4300 4400
+Wire Wire Line
+	4300 4400 5000 4400
 Wire Wire Line
 	3750 4400 3750 4750
 $Comp
@@ -544,7 +574,9 @@ F 3 "~" H 900 4200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4300 4250 4300 4650
+	4300 4250 4300 4400
+Wire Wire Line
+	4300 4400 4300 4650
 Text GLabel 4250 3000 0    60   Input ~ 0
 VBAT_EN
 Wire Wire Line
@@ -573,13 +605,13 @@ F 3 "~" H 7700 850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6950 1300 8050 1300
-Text GLabel 10550 2050 2    60   Input ~ 0
-PM_ENABLE
+	6950 1300 7300 1300
 Wire Wire Line
-	9650 2050 10550 2050
-Text Label 10000 2050 0    60   ~ 0
-PM_EN
+	7300 1300 7700 1300
+Wire Wire Line
+	7700 1300 8050 1300
+Text GLabel 1200 6850 0    60   Input ~ 0
+PM_ENABLE
 $Comp
 L LM2735Y U4
 U 1 1 5251AF5C
@@ -658,24 +690,42 @@ F 3 "~" H 3650 6000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	900  6000 2100 6000
+	900  6000 1200 6000
+Wire Wire Line
+	1200 6000 1700 6000
+Wire Wire Line
+	1700 6000 2100 6000
 Wire Wire Line
 	1200 6000 1200 6100
 Connection ~ 1700 6000
 Wire Wire Line
-	2700 6000 3450 6000
+	2700 6000 3100 6000
+Wire Wire Line
+	3100 6000 3450 6000
 Connection ~ 3100 6000
 Wire Wire Line
-	3850 6000 5250 6000
+	3850 6000 4100 6000
+Wire Wire Line
+	4100 6000 4400 6000
+Wire Wire Line
+	4400 6000 4600 6000
+Wire Wire Line
+	4600 6000 5100 6000
+Wire Wire Line
+	5100 6000 5250 6000
 Wire Wire Line
 	4600 6000 4600 6300
 Wire Wire Line
-	4100 6000 4100 6300
+	4100 6000 4100 6200
+Wire Wire Line
+	4100 6200 4100 6300
 Connection ~ 4100 6000
 Wire Wire Line
 	4100 6850 4100 6700
 Wire Wire Line
-	2900 6850 4100 6850
+	2900 6850 3800 6850
+Wire Wire Line
+	3800 6850 4100 6850
 Wire Wire Line
 	2900 6450 3100 6450
 Wire Wire Line
@@ -685,7 +735,9 @@ Wire Wire Line
 Wire Wire Line
 	1700 6450 1700 6000
 Wire Wire Line
-	3800 6800 3800 7000
+	3800 6800 3800 6850
+Wire Wire Line
+	3800 6850 3800 7000
 Connection ~ 3800 6850
 Wire Wire Line
 	3800 7500 3800 7600
@@ -751,10 +803,12 @@ F 3 "~" H 900 5700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	900  5900 900  6100
+	900  5900 900  6000
+Wire Wire Line
+	900  6000 900  6100
 Connection ~ 1200 6000
 Wire Wire Line
-	1850 6850 1050 6850
+	1850 6850 1200 6850
 $Comp
 L V_BOOST #U5
 U 1 1 5251BF9B
@@ -785,7 +839,9 @@ Wire Wire Line
 	3050 2150 3050 2250
 Connection ~ 1300 2800
 Wire Wire Line
-	5000 1450 3500 1450
+	3500 1450 3700 1450
+Wire Wire Line
+	3700 1450 5000 1450
 $Comp
 L R R4
 U 1 1 5251C362
@@ -890,7 +946,9 @@ F 3 "~" H 5250 1550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4850 2250 5550 2250
+	4850 2250 5250 2250
+Wire Wire Line
+	5250 2250 5550 2250
 Wire Wire Line
 	4850 2250 4850 1600
 Wire Wire Line
@@ -1032,8 +1090,9 @@ F 3 "" H 9850 2900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9850 2200 9850 2050
-Connection ~ 9850 2050
+	9850 1900 9850 2050
+Wire Wire Line
+	9850 2050 9850 2200
 Wire Wire Line
 	9850 2700 9850 2900
 $Comp
@@ -1069,7 +1128,9 @@ F 3 "~" H 8950 3600 30  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6200 2050 7400 2050
+	6200 2050 6750 2050
+Wire Wire Line
+	6750 2050 7400 2050
 Connection ~ 6750 2050
 Text Notes 7350 1700 0    60   ~ 0
 Power on switch + User switch\nUsing the rotary encoder's push button
@@ -1120,7 +1181,9 @@ $EndComp
 Wire Wire Line
 	8950 3150 8950 3350
 Wire Wire Line
-	8950 3850 8950 4000
+	8950 3850 8950 3950
+Wire Wire Line
+	8950 3950 8950 4000
 Wire Wire Line
 	8950 4500 8950 4650
 Wire Wire Line
@@ -1174,7 +1237,9 @@ Connection ~ 4100 6200
 Wire Wire Line
 	900  6500 900  6550
 Wire Wire Line
-	900  6550 1200 6550
+	900  6550 1050 6550
+Wire Wire Line
+	1050 6550 1200 6550
 Wire Wire Line
 	1200 6550 1200 6500
 Wire Wire Line
@@ -1240,4 +1305,18 @@ Wire Wire Line
 	3700 2400 4000 2400
 Text GLabel 4000 2400 2    60   Input ~ 0
 BAT_TEMP_SENS
+$Comp
+L VDD_PERIPH #U?
+U 1 1 5272BAE9
+P 9850 1700
+F 0 "#U?" H 9850 1900 60  0001 C CNN
+F 1 "VDD_PERIPH" H 9850 1800 60  0000 C CNN
+F 2 "" H 9850 1700 60  0000 C CNN
+F 3 "" H 9850 1700 60  0000 C CNN
+	1    9850 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9650 2050 9850 2050
+Connection ~ 9850 2050
 $EndSCHEMATC
