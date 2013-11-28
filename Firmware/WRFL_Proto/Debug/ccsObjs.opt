@@ -1,0 +1,1 @@
+"./wrfl_proto_mux.obj" "./startup_ccs.obj" "./main.obj" "./i2cm_drv.obj" "./bmp180.obj" "./Nokia5110.obj" -l"E:\ti\TivaWare_C_Series-1.1\driverlib\ccs\Debug\driverlib.lib" -l"libc.a" "../tm4c123gh6pm.cmd" 
