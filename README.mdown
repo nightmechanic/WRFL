@@ -1,4 +1,14 @@
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">WRFL</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Ran Katz (Nightmechanic)</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/nightmechanic/WRFL" rel="dct:source">https://github.com/nightmechanic/WRFL</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">WRFL</span> by 
+<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Ran Katz (NIghtmechanic)
+</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />
+Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/nightmechanic/WRFL" 
+rel="dct:source">https://github.com/nightmechanic/WRFL</a>.
+
+**The above license applies only to files created by me, **
+**note that some of the firmware files belong to 3rd parties and have their own licenses and restrictions!!!**
 
 This is the reposirory for my Water Rocket flight logger a.k.a WRFL.
 
