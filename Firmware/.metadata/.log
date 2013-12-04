@@ -322,3 +322,9 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.
 !ENTRY com.ti.ccstudio.debug 1 0 2013-12-04 22:51:15.500
 !MESSAGE DS_ERROR: Error connecting to the target:
 Frequency is out of range.
+
+!ENTRY com.ti.ccstudio.debug.ui 2 0 2013-12-05 01:10:06.184
+!MESSAGE The heartbeat job is still running.
+
+!ENTRY org.eclipse.core.jobs 2 2 2013-12-05 01:10:08.511
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.ti.ccstudio.debug.ui.licensing.LicenseMonitor$1
