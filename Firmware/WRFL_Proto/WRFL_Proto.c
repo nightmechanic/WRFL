@@ -38,7 +38,7 @@
 
 
 
-#define VAR_COUNT	256 //debug , to be removed
+#define VAR_COUNT	128 //debug , to be removed
 
 //global Kalman filter  structure for altitude
 tKalman_State Alt_KState;
