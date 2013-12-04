@@ -1,0 +1,15 @@
+/*
+ * Kalman_AltiUno.h
+ *
+ *  Created on: Dec 1, 2013
+ *      Author: Gali and Ran
+ */
+
+#ifndef KALMAN_ALTIUNO_H_
+#define KALMAN_ALTIUNO_H_
+
+extern void KalmanInit();
+extern float KalmanCalc (float altitude);
+
+
+#endif /* KALMAN_ALTIUNO_H_ */

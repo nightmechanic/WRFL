@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;WRFL_Proto/Kalman_AlitiUno&apos;" deleteContents="false" description="Delete resource &apos;WRFL_Proto/Kalman_AlitiUno&apos;" element1="/WRFL_Proto/Kalman_AlitiUno" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1385849953789"/>
+</session>

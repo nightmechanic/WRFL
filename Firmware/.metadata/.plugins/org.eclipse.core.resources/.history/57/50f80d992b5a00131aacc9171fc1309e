@@ -1,0 +1,70 @@
+/* Copied from teh AltiUno project 
+	Copyright Boris du Reau 2012-2013
+	
+	
+	Modified by Ran Katz, 2013 
+*/
+
+#include <stdbool.h>
+#include <stdint.h>
+#include <math.h>
+
+//Kalman Variables
+// float f_1=1.00000f; //cast as float -  for some reason does not work with CCS, see function KalmanCalc
+float kalman_x;
+float kalman_x_last;
+float kalman_p;
+float kalman_p_last;
+float kalman_k;
+float kalman_q;
+float kalman_r;
+float kalman_x_temp;
+float kalman_p_temp;
+
+//================================================================
+// Kalman functions in your code
+//================================================================
+
+//Call KalmanInit() once.
+
+//KalmanInit() - Call before any iterations of KalmanCalc()
+void KalmanInit()
+{
+   kalman_q=4.0001f; //filter parameters, you can play around with them
+   kalman_r=0.71f; // but these values appear to be fairly optimal
+
+   kalman_x = 0;
+   kalman_p = 0;
+   kalman_x_temp = 0;
+   kalman_p_temp = 0;
+   
+   kalman_x_last = 0;
+   kalman_p_last = 1.0f;
+   
+}
+
+//KalmanCalc() - Calculates new Kalman values from float value "altitude"
+// This will be the ASL altitude during the flight, and the AGL altitude during dumps
+
+float KalmanCalc (float altitude)
+{
+   
+   //Predict kalman_x_temp, kalman_p_temp
+   kalman_x_temp = kalman_x_last;
+   //kalman_p_temp = kalman_p_last + kalman_r;
+   kalman_p_temp = kalman_p_last;
+   
+   //Update kalman values
+   //kalman_k = (1.0f/(kalman_p_temp + kalman_q)) * kalman_p_temp; //f_1 changed to 1.0f for CCS support...
+   kalman_k = kalman_p_temp/(kalman_p_temp + kalman_r);
+   kalman_x = kalman_x_temp + (kalman_k * (altitude - kalman_x_temp));
+   kalman_p = (1.0f - kalman_k) * kalman_p_temp; //f_1 changed to 1.0f for CCS support...
+   
+   //Save this state for next time
+   kalman_x_last = kalman_x;
+   kalman_p_last = kalman_p;
+   
+   //Assign current Kalman filtered altitude to working variables
+   //KAlt = kalman_x; //FLOAT Kalman-filtered altitude value
+  return kalman_x;
+}

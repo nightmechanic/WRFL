@@ -28,6 +28,10 @@
  http://users.ece.utexas.edu/~valvano/
  */
 
+/* Modified by Ran Katz (Nightmechanic) for the WRFL project
+ * modified to use standard TI Tivaware peripheral drivers (in ROM if available)
+ */
+
 // Signal        (Nokia 5110) LM4F120 pin
 // Reset         (RST, pin 1) connected to PA7
 // SSI0Fss       (CE,  pin 2) connected to PA3
@@ -49,6 +53,8 @@
 #include "driverlib/ssi.h"
 #include "driverlib/gpio.h"
 #include "driverlib/sysctl.h"
+#include "driverlib/rom.h"
+#include "driverlib/rom_map.h"
 
 #define RESET(value)			(GPIOPinWrite(LCD_RESET_PORT, LCD_RESET_PIN,  value))
 #define RESET_LOW               0
@@ -56,45 +62,8 @@
 #define DC(value)				(GPIOPinWrite(LCD_DC_PORT, LCD_DC_PIN, value))
 #define DC_COMMAND              0
 #define DC_DATA                 LCD_DC_PIN
-//#define DC                      (*((volatile unsigned long *)0x40004100))
-//#define DC_COMMAND              0
-//#define DC_DATA                 0x40
-//#define RESET                   (*((volatile unsigned long *)0x40004200))
-//#define RESET_LOW               0
-//#define RESET_HIGH              0x80
-#define GPIO_PORTA_DIR_R        (*((volatile unsigned long *)0x40004400))
-#define GPIO_PORTA_AFSEL_R      (*((volatile unsigned long *)0x40004420))
-#define GPIO_PORTA_DEN_R        (*((volatile unsigned long *)0x4000451C))
-#define GPIO_PORTA_AMSEL_R      (*((volatile unsigned long *)0x40004528))
-#define GPIO_PORTA_PCTL_R       (*((volatile unsigned long *)0x4000452C))
-#define SSI0_CR0_R              (*((volatile unsigned long *)0x40008000))
-#define SSI0_CR1_R              (*((volatile unsigned long *)0x40008004))
-#define SSI0_DR_R               (*((volatile unsigned long *)0x40008008))
-#define SSI0_SR_R               (*((volatile unsigned long *)0x4000800C))
-#define SSI0_CPSR_R             (*((volatile unsigned long *)0x40008010))
-#define SSI0_CC_R               (*((volatile unsigned long *)0x40008FC8))
-#define SSI_CR0_SCR_M           0x0000FF00  // SSI Serial Clock Rate
-#define SSI_CR0_SPH             0x00000080  // SSI Serial Clock Phase
-#define SSI_CR0_SPO             0x00000040  // SSI Serial Clock Polarity
-#define SSI_CR0_FRF_M           0x00000030  // SSI Frame Format Select
-#define SSI_CR0_FRF_MOTO        0x00000000  // Freescale SPI Frame Format
-#define SSI_CR0_DSS_M           0x0000000F  // SSI Data Size Select
-#define SSI_CR0_DSS_8           0x00000007  // 8-bit data
-#define SSI_CR1_MS              0x00000004  // SSI Master/Slave Select
-#define SSI_CR1_SSE             0x00000002  // SSI Synchronous Serial Port
-                                            // Enable
-#define SSI_SR_RNE              0x00000004  // SSI Receive FIFO Not Empty
-#define SSI_SR_TNF              0x00000002  // SSI Transmit FIFO Not Full
-#define SSI_SR_TFE              0x00000001  // SSI Transmit FIFO Empty
-#define SSI_CPSR_CPSDVSR_M      0x000000FF  // SSI Clock Prescale Divisor
-#define SSI_CC_CS_M             0x0000000F  // SSI Baud Clock Source
-#define SSI_CC_CS_SYSPLL        0x00000000  // Either the system clock (if the
-                                            // PLL bypass is in effect) or the
-                                            // PLL output (default)
-#define SYSCTL_RCGC1_R          (*((volatile unsigned long *)0x400FE104))
-#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
-#define SYSCTL_RCGC1_SSI0       0x00000010  // SSI0 Clock Gating Control
-#define SYSCTL_RCGC2_GPIOA      0x00000001  // port A Clock Gating Control
+#define DC_VALUE				(GPIOPinRead(LCD_DC_PORT, LCD_DC_PIN))
+
 
 enum typeOfWrite{
   COMMAND,                              // the transmission is an LCD command
@@ -106,19 +75,26 @@ enum typeOfWrite{
 // outputs: none
 // assumes: SSI0 and port A have already been initialized
 static void lcdwrite(enum typeOfWrite type, char data){
-	unsigned int dummy;
+	//unsigned int dummy;
+	int new_DC;
+
+
 	if(type == COMMAND){
-    DC(DC_COMMAND);
-  } else{
-    DC(DC_DATA);
-  }
- // while((SSI0_SR_R&SSI_SR_TFE)==0){};   // wait until transmit FIFO empty
- // SSI0_DR_R = data;                     // data out
-//  while((SSI0_SR_R&SSI_SR_RNE)==0){};   // wait until response
-//  data = SSI0_DR_R;                     // remove meaningless response from receive FIFO
-  SSIDataPut(LCD_SSI_BASE, data);
-  //for DC protection...
-  SSIDataGet(LCD_SSI_BASE, &dummy);
+		new_DC=DC_COMMAND;
+	} else{
+		new_DC=DC_DATA;
+	}
+
+	//check if the DC line needs to change - if so we must do that after the
+	if (new_DC != DC_VALUE){
+		//wait for SPI to finish
+		while(MAP_SSIBusy(LCD_SSI_BASE));
+	}
+
+	DC(new_DC);
+
+  MAP_SSIDataPut(LCD_SSI_BASE, data);
+
 
 }
 
@@ -135,40 +111,15 @@ static void lcdwrite(enum typeOfWrite type, char data){
 // assumes: system clock rate of 50 MHz or less
 void Nokia5110_Init(void){
   volatile unsigned long delay;
- // SYSCTL_RCGC1_R |= SYSCTL_RCGC1_SSI0;  // activate SSI0
- // SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA; // activate port A
-//  delay = SYSCTL_RCGC2_R;               // allow time to finish activating
-//  GPIO_PORTA_DIR_R |= 0xC0;             // make PA6,7 out
-//  GPIO_PORTA_AFSEL_R |= 0x2C;           // enable alt funct on PA2,3,5
-//  GPIO_PORTA_AFSEL_R &= ~0xC0;          // disable alt funct on PA6,7
-//  GPIO_PORTA_DEN_R |= 0xEC;             // enable digital I/O on PA2,3,5,6,7
-                                        // configure PA2,3,5 as SSI
-//  GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R&0xFF0F00FF)+0x00202200;
-                                        // configure PA6,7 as GPIO
-//  GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R&0x00FFFFFF)+0x00000000;
-//  GPIO_PORTA_AMSEL_R &= ~0xEC;          // disable analog functionality on PA2,3,5,6,7
-//  SSI0_CR1_R &= ~SSI_CR1_SSE;           // disable SSI
-//  SSI0_CR1_R &= ~SSI_CR1_MS;            // master mode
-                                        // configure for system clock/PLL baud clock source
-//  SSI0_CC_R = (SSI0_CC_R&~SSI_CC_CS_M)+SSI_CC_CS_SYSPLL;
-                                        // clock divider for 3.125 MHz SSIClk (50 MHz PIOSC/16)
-//  SSI0_CPSR_R = (SSI0_CPSR_R&~SSI_CPSR_CPSDVSR_M)+16;
-//  SSI0_CR0_R &= ~(SSI_CR0_SCR_M |       // SCR = 0 (3.125 Mbps data rate)
-//                  SSI_CR0_SPH |         // SPH = 0
-//                  SSI_CR0_SPO);         // SPO = 0
-                                        // FRF = Freescale format
-//  SSI0_CR0_R = (SSI0_CR0_R&~SSI_CR0_FRF_M)+SSI_CR0_FRF_MOTO;
-                                        // DSS = 8-bit data
-//  SSI0_CR0_R = (SSI0_CR0_R&~SSI_CR0_DSS_M)+SSI_CR0_DSS_8;
-//  SSI0_CR1_R |= SSI_CR1_SSE;            // enable SSI
+
 
   //disable SSI
-  SSIDisable(LCD_SSI_BASE);
+  MAP_SSIDisable(LCD_SSI_BASE);
   //set clock and other parameters
-  SSIConfigSetExpClk(LCD_SSI_BASE, SysCtlClockGet(), SSI_FRF_MOTO_MODE_0,
+  MAP_SSIConfigSetExpClk(LCD_SSI_BASE, SysCtlClockGet(), SSI_FRF_MOTO_MODE_0,
                          SSI_MODE_MASTER, 3000000, 8);
   //enable SSI
-  SSIEnable(LCD_SSI_BASE);
+  MAP_SSIEnable(LCD_SSI_BASE);
 
   RESET(RESET_LOW);                    // reset the LCD to a known state
   for(delay=0; delay<10; delay=delay+1);// delay minimum 100 ns

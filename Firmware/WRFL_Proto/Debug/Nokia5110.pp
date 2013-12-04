@@ -15,6 +15,8 @@ Nokia5110.obj: E:/ti/TivaWare_C_Series-1.1/driverlib/gpio.h
 Nokia5110.obj: E:/ti/TivaWare_C_Series-1.1/inc/hw_ints.h
 Nokia5110.obj: E:/ti/TivaWare_C_Series-1.1/driverlib/ssi.h
 Nokia5110.obj: E:/ti/TivaWare_C_Series-1.1/driverlib/sysctl.h
+Nokia5110.obj: E:/ti/TivaWare_C_Series-1.1/driverlib/rom.h
+Nokia5110.obj: E:/ti/TivaWare_C_Series-1.1/driverlib/rom_map.h
 
 ../Nokia5110.c: 
 ../Nokia5110.h: 
@@ -31,3 +33,5 @@ E:/ti/TivaWare_C_Series-1.1/driverlib/gpio.h:
 E:/ti/TivaWare_C_Series-1.1/inc/hw_ints.h: 
 E:/ti/TivaWare_C_Series-1.1/driverlib/ssi.h: 
 E:/ti/TivaWare_C_Series-1.1/driverlib/sysctl.h: 
+E:/ti/TivaWare_C_Series-1.1/driverlib/rom.h: 
+E:/ti/TivaWare_C_Series-1.1/driverlib/rom_map.h: 

@@ -1,0 +1,324 @@
+!SESSION 2013-12-01 00:10:53.933 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.ui 2 0 2013-12-01 00:12:56.545
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:12:56.545
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:12:56.545
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:12:56.545
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:12:56.545
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:12:56.545
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:12:56.546
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:12:56.546
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:12:56.546
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY com.ti.ccstudio.debug.ui 2 0 2013-12-01 00:14:17.810
+!MESSAGE The heartbeat job is still running.
+
+!ENTRY org.eclipse.core.jobs 2 2 2013-12-01 00:14:20.016
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.ti.ccstudio.debug.ui.licensing.LicenseMonitor$1
+!SESSION 2013-12-01 00:14:21.136 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product -data E:\GitHub\WRFL\Firmware -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.ui 2 0 2013-12-01 00:14:22.817
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:14:22.817
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:14:22.817
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:14:22.817
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:14:22.817
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:14:22.817
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:14:22.817
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:14:22.817
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:14:22.817
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY com.ti.ccstudio.debug.ui 2 0 2013-12-01 00:15:18.195
+!MESSAGE The heartbeat job is still running.
+
+!ENTRY org.eclipse.core.jobs 2 2 2013-12-01 00:15:19.149
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.ti.ccstudio.debug.ui.licensing.LicenseMonitor$1
+!SESSION 2013-12-01 00:16:07.647 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.ui 2 0 2013-12-01 00:16:18.665
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:16:18.665
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:16:18.665
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:16:18.665
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:16:18.665
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:16:18.665
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:16:18.665
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:16:18.665
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-01 00:16:18.665
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-12-01 00:17:19.891
+!MESSAGE Indexed 'WRFL_Proto' (6 sources, 34 headers) in 2.51 sec: 1,901 declarations; 5,918 references; 0 unresolved inclusions; 0 syntax errors; 154 unresolved names (1.93%)
+
+!ENTRY com.ti.ccstudio.debug 1 0 2013-12-01 00:31:56.267
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Frequency is out of range.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2013-12-01 00:31:56.309
+!MESSAGE DS_ERROR: Error connecting to the target:
+Frequency is out of range.
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-01 00:50:00.629
+!MESSAGE NLS unused message: Checking in: com.ti.ccstudio.project.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-01 00:52:23.489
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsets in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-01 00:52:23.489
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsetsTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-01 00:52:23.490
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytes in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-01 00:52:23.490
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytesTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-01 00:52:23.491
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddress in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-01 00:52:23.491
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddressTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 00:52:34.344
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/fd_div_t2.asm
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:04:03.995
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/ssi.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:04:04.004
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/gpio.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:04:04.007
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:04:04.009
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxlog.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:04:23.604
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/boot.asm
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:05:28.569
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/ssi.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:05:28.578
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/gpio.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:05:28.581
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:05:28.586
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxlog.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:10:58.233
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/ssi.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:10:58.243
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/gpio.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:10:58.245
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:10:58.248
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxlog.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:11:23.450
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/boot.asm
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:12:11.270
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/boot.asm
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:13:54.258
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/ssi.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:13:54.268
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/gpio.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:13:54.271
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:13:54.274
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxlog.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:15:26.397
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/boot.asm
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:18:54.846
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/ssi.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:18:54.856
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/gpio.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:18:54.859
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:18:54.861
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxlog.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:26:24.668
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/sysctl.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:27:52.023
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/ssi.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:27:52.032
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/gpio.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:27:52.036
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:27:52.038
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxlog.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:27:56.733
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/boot.asm
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:30:14.523
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxpow.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:31:00.761
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxpow.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:31:09.368
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxpow.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:41:01.675
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxsqrt.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:41:01.687
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/args_main.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:41:35.781
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/_lock.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:41:35.791
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/gpio.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:47:35.692
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xxsqrt.h
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:47:35.698
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/args_main.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:48:11.528
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/xferaise.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:48:11.541
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/raise.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:48:21.799
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/feraiseexcept.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2013-12-01 02:48:29.995
+!MESSAGE Unable to locate file: C:/DriverLib/build/DriverLib.test/driverlib/gpio.c
+
+!ENTRY com.ti.ccstudio.debug 1 0 2013-12-01 03:44:45.726
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error: Timed out while waiting for target powerup/polling a hardware resource.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2013-12-01 04:11:22.992
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error: Connection with the target was unexpectedly lost.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2013-12-01 04:11:23.044
+!MESSAGE DS_ERROR: CORTEX_M4_0: Failed to remove the debug state from the target before disconnecting.  There may still be breakpoint op-codes embedded in program memory.  It is recommended that you reset the emulator before you connect and reload your program before you continue debugging
+
+!SESSION 2013-12-04 22:50:18.959 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-12-04 22:50:25.301
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2013-12-04 22:50:28.410
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-04 22:50:28.411
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-04 22:50:28.411
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-04 22:50:28.411
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-04 22:50:28.411
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-04 22:50:28.411
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-04 22:50:28.411
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-04 22:50:28.411
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-12-04 22:50:28.411
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-04 22:50:42.474
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsets in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-04 22:50:42.474
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsetsTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-04 22:50:42.474
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytes in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-04 22:50:42.474
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytesTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-04 22:50:42.475
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddress in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-12-04 22:50:42.475
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddressTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY com.ti.ccstudio.debug.server 4 214294189 2013-12-04 22:50:45.434
+!MESSAGE Unexpected CCS exit detected [12/1/13 12:16 AM]!!!
+
+!ENTRY com.ti.ccstudio.debug 1 0 2013-12-04 22:51:15.489
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error connecting to the target: Frequency is out of range.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2013-12-04 22:51:15.500
+!MESSAGE DS_ERROR: Error connecting to the target:
+Frequency is out of range.
