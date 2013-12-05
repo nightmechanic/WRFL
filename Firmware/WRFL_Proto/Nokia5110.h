@@ -214,3 +214,5 @@ void Nokia5110_Clear(void);
 void Nokia5110_DrawFullImage(const char *ptr);
 
 void Nokia5110_OutUDec_NoSpace(unsigned short n);
+
+void Nokia5110_OutFloatp3(float fnum);

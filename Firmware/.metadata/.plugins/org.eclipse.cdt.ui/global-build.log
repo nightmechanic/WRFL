@@ -2,10 +2,10 @@
 **** Build of configuration Debug for project WRFL_Proto ****
 
 "E:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../Nokia5110.c'
+'Building file: ../WRFL_Proto.c'
 'Invoking: ARM Compiler'
-"E:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --include_path="E:/ti/TivaWare_C_Series-1.1" --include_path="E:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --define=ccs --define=PART_TM4C123GH6PM --define=TARGET_IS_BLIZZARD_RB1 --diag_warning=225 --display_error_number --diag_wrap=off --preproc_with_compile --preproc_dependency="Nokia5110.pp"  "../Nokia5110.c"
-'Finished building: ../Nokia5110.c'
+"E:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --include_path="E:/ti/TivaWare_C_Series-1.1" --include_path="E:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --define=ccs --define=PART_TM4C123GH6PM --define=TARGET_IS_BLIZZARD_RB1 --diag_warning=225 --display_error_number --diag_wrap=off --preproc_with_compile --preproc_dependency="WRFL_Proto.pp"  "../WRFL_Proto.c"
+'Finished building: ../WRFL_Proto.c'
 ' '
 'Building target: WRFL_Proto.out'
 'Invoking: ARM Linker'
@@ -20,5 +20,22 @@
 
 "E:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
 gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project WRFL_Proto ****
+
+"E:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../WRFL_Proto.c'
+'Invoking: ARM Compiler'
+"E:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --include_path="E:/ti/TivaWare_C_Series-1.1" --include_path="E:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --define=ccs --define=PART_TM4C123GH6PM --define=TARGET_IS_BLIZZARD_RB1 --diag_warning=225 --display_error_number --diag_wrap=off --preproc_with_compile --preproc_dependency="WRFL_Proto.pp"  "../WRFL_Proto.c"
+'Finished building: ../WRFL_Proto.c'
+' '
+'Building target: WRFL_Proto.out'
+'Invoking: ARM Linker'
+"E:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --define=ccs --define=PART_TM4C123GH6PM --define=TARGET_IS_BLIZZARD_RB1 --diag_warning=225 --display_error_number --diag_wrap=off -z --stack_size=256 -m"WRFL_Proto.map" --heap_size=0 -i"E:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"E:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="WRFL_Proto_linkInfo.xml" --rom_model -o "WRFL_Proto.out"  "./wrfl_proto_mux.obj" "./startup_ccs.obj" "./i2cm_drv.obj" "./bmp180.obj" "./WRFL_Proto.obj" "./WRFL_Kalman.obj" "./Nokia5110.obj" -l"E:\ti\TivaWare_C_Series-1.1\driverlib\ccs\Debug\driverlib.lib" -l"libc.a" "../tm4c123gh6pm.cmd" 
+<Linking>
+'Finished building target: WRFL_Proto.out'
+' '
 
 **** Build Finished ****

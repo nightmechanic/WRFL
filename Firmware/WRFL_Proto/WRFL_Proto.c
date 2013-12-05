@@ -135,8 +135,6 @@ int main(void) {
 	
 	int  delay;
 	float fTemperature, fPressure, fAltitude, fK_Altitude;
-	int32_t i32IntegerPart;
-	int32_t i32FractionPart;
 	int count,i;
 	static float f_meas[VAR_COUNT], fAlt_Mean, fAlt_Var;
 
@@ -250,23 +248,16 @@ int main(void) {
 	   // Convert the floats to an integer part and fraction part for easy
 	   // print.
 	   //
-	   i32IntegerPart = (int32_t) fTemperature;
-	   i32FractionPart =(int32_t) (fTemperature * 1000.0f);
-	   i32FractionPart = i32FractionPart - (i32IntegerPart * 1000);
-	   if(i32FractionPart < 0)
-	   {
-		   i32FractionPart *= -1;
-	   }
+
 
 	   //
 	   // Print temperature with three digits of decimal precision.
 	   //
-	   //UARTprintf("Temperature %3d.%03d\t\t", i32IntegerPart, i32FractionPart);
+
 	   Nokia5110_SetCursor(0, 0);
 	       Nokia5110_OutString("Temp:");
-	       Nokia5110_OutUDec_NoSpace((unsigned short)i32IntegerPart);
-	       Nokia5110_OutString(".");
-	       Nokia5110_OutUDec_NoSpace((unsigned short)i32FractionPart);
+
+	       Nokia5110_OutFloatp3(fTemperature);
 
 	   //
 	   // Get a local copy of the latest air pressure data in float format.
@@ -275,29 +266,17 @@ int main(void) {
 
 
 
-	   //
-	   // Convert the floats to an integer part and fraction part for easy
-	   // print.
-	   //display in hPa
-
-	   i32IntegerPart = (int32_t) (fPressure / 100.0f);
-	   i32FractionPart =(int32_t) (fPressure * 10.0f);
-	   i32FractionPart = i32FractionPart - (i32IntegerPart * 1000);
-	   if(i32FractionPart < 0)
-	   {
-		   i32FractionPart *= -1;
-	   }
 
 	   //
 	   // Print Pressure with three digits of decimal precision.
 	   //
-	   //UARTprintf("Pressure %3d.%03d\t\t", i32IntegerPart, i32FractionPart);
+
 	   Nokia5110_SetCursor(0, 1);
 	   Nokia5110_OutString("Pres:");
 	   Nokia5110_SetCursor(0, 2);
-	   Nokia5110_OutUDec_NoSpace((unsigned short)i32IntegerPart);
-	   Nokia5110_OutString(".");
-	   Nokia5110_OutUDec_NoSpace((unsigned short)i32FractionPart);
+
+	   //display in hPa
+	   Nokia5110_OutFloatp3((fPressure / 100.0f));
 
 	   //
 	   // Calculate the altitude.
@@ -308,117 +287,63 @@ int main(void) {
 	   fAltitude = 44330.0f * (1.0f - powf(fPressure / LOC_ALT_P0,
 	   										   1.0f / 5.255f));
 
-	   //
-	   // Convert the floats to an integer part and fraction part for easy
-	   // print.
-	   //
-	   i32IntegerPart = (int32_t) fAltitude;
-	   i32FractionPart =(int32_t) (fAltitude * 1000.0f);
-	   i32FractionPart = i32FractionPart - (i32IntegerPart * 1000);
-	   if(i32FractionPart < 0)
-	   {
-		   i32FractionPart *= -1;
-	   }
 
 	   //
 	   // Print altitude with three digits of decimal precision.
 	   //
-	   //UARTprintf("Altitude %3d.%03d", i32IntegerPart, i32FractionPart);
+
 	   Nokia5110_SetCursor(0, 3);
 	   Nokia5110_OutString("Alt:");
-	   if(i32IntegerPart<0)
-	   {
-		   Nokia5110_OutString("-");
-		   i32IntegerPart *= -1;
-	   }
-	   Nokia5110_OutUDec_NoSpace((unsigned short)i32IntegerPart);
-	   Nokia5110_OutString(".");
-	   Nokia5110_OutUDec_NoSpace((unsigned short)i32FractionPart);
 
-
-
+	   Nokia5110_OutFloatp3(fAltitude);
 
 	   // Print Kalman filtered altitude
 
 	   Kalman_Update (&Alt_KState, fAltitude);
 	   fK_Altitude = Alt_KState.X;
 
-	   //
-	  	   // Convert the floats to an integer part and fraction part for easy
-	  	   // print.
-	  	   //
-	  	   i32IntegerPart = (int32_t) fK_Altitude;
-	  	   i32FractionPart =(int32_t) (fK_Altitude * 1000.0f);
-	  	   i32FractionPart = i32FractionPart - (i32IntegerPart * 1000);
-	  	   if(i32FractionPart < 0)
-	  	   {
-	  		   i32FractionPart *= -1;
-	  	   }
-
 	  	   //
 	  	   // Print altitude with three digits of decimal precision.
 	  	   //
-	  	   //UARTprintf("Altitude %3d.%03d", i32IntegerPart, i32FractionPart);
+
 	  	   Nokia5110_SetCursor(0, 5);
 	  	   Nokia5110_OutString("KAlt:");
-	  	   if(i32IntegerPart<0)
-	  	   {
-	  		   Nokia5110_OutString("-");
-	  		   i32IntegerPart *= -1;
-	  	   }
-	  	   Nokia5110_OutUDec_NoSpace((unsigned short)i32IntegerPart);
-	  	   Nokia5110_OutString(".");
-	  	   Nokia5110_OutUDec_NoSpace((unsigned short)i32FractionPart);
+
+	  	 Nokia5110_OutFloatp3(fK_Altitude);
 
 	  	 //calculate variance
-	  	 	   f_meas[count]=fK_Altitude;
-	  	 	   count++;
+	  	 f_meas[count]=fK_Altitude;
+	  	 count++;
 
-	  	 	   if (count>=VAR_COUNT){
-	  	 		   fAlt_Mean = 0.0f;
-	  	 		   fAlt_Var = 0.0f;
-	  	 		   // calculate mean
-	  	 		   for(i=0; i<VAR_COUNT; i++){
-	  	 			   fAlt_Mean = fAlt_Mean +f_meas[i];
-	  	 		   }
-	  	 		   fAlt_Mean = fAlt_Mean/((float) VAR_COUNT);
+	  	 if (count>=VAR_COUNT){
+	  		 fAlt_Mean = 0.0f;
+	  		 fAlt_Var = 0.0f;
+	  		 // calculate mean
+	  		 for(i=0; i<VAR_COUNT; i++){
+	  			 fAlt_Mean = fAlt_Mean +f_meas[i];
+	  		 }
+	  		 fAlt_Mean = fAlt_Mean/((float) VAR_COUNT);
 
-	  	 		   // Calculate Var
-	  	 		   for(i=0; i<VAR_COUNT; i++){
-	  	 		   			   fAlt_Var = fAlt_Var + powf((f_meas[i] - fAlt_Mean),2.0f);
-	  	 		   		   }
-	  	 		   fAlt_Var = fAlt_Var/((float) VAR_COUNT);
+	  		 // Calculate Var
+	  		 for(i=0; i<VAR_COUNT; i++){
+	  			 fAlt_Var = fAlt_Var + powf((f_meas[i] - fAlt_Mean),2.0f);
+	  		 }
+	  		 fAlt_Var = fAlt_Var/((float) VAR_COUNT);
 
-	  	 		   //
-	  	 		   	   // Convert the floats to an integer part and fraction part for easy
-	  	 		   	   // print.
-	  	 		   	   //
-	  	 		   	   i32IntegerPart = (int32_t) fAlt_Var;
-	  	 		   	   i32FractionPart =(int32_t) (fAlt_Var * 1000.0f);
-	  	 		   	   i32FractionPart = i32FractionPart - (i32IntegerPart * 1000);
-	  	 		   	   if(i32FractionPart < 0)
-	  	 		   	   {
-	  	 		   		   i32FractionPart *= -1;
-	  	 		   	   }
 
-	  	 		   	   //
-	  	 		   	   // Print altitude with three digits of decimal precision.
-	  	 		   	   //
-	  	 		   	   //UARTprintf("Altitude %3d.%03d", i32IntegerPart, i32FractionPart);
-	  	 		   	   Nokia5110_SetCursor(0, 4);
-	  	 		   	   Nokia5110_OutString("Var:");
-	  	 		   	   if(i32IntegerPart<0)
-	  	 		   	   {
-	  	 		   		   Nokia5110_OutString("-");
-	  	 		   		   i32IntegerPart *= -1;
-	  	 		   	   }
-	  	 		   	   Nokia5110_OutUDec_NoSpace((unsigned short)i32IntegerPart);
-	  	 		   	   Nokia5110_OutString(".");
-	  	 		   	   Nokia5110_OutUDec_NoSpace((unsigned short)i32FractionPart);
 
-	  	 		   count = 0;
+	  		 //
+	  		 // Print altitude with three digits of decimal precision.
+	  		 //
 
-	  	 	   }
+	  		 Nokia5110_SetCursor(0, 4);
+	  		 Nokia5110_OutString("Var:");
+
+	  		 Nokia5110_OutFloatp3(fAlt_Var);
+
+	  		 count = 0;
+
+	  	 }
 
 	   //
 	   // Delay to keep printing speed reasonable. About 100msec.

@@ -288,3 +288,41 @@ void Nokia5110_OutUDec_NoSpace(unsigned short n){
     Nokia5110_OutChar(n%10+'0'); /* ones digit */
   }
 }
+
+void Nokia5110_OutFloatp3(float fnum){
+
+	int32_t i32IntegerPart;
+	int32_t i32FractionPart;
+	 // Convert the floats to an integer part and fraction part for easy
+	 // print.
+	//
+	i32IntegerPart = (int32_t) fnum;
+	i32FractionPart =(int32_t) (fnum * 1000.0f);
+	i32FractionPart = i32FractionPart - (i32IntegerPart * 1000);
+	if(i32FractionPart < 0)
+	{
+	   i32FractionPart *= -1;
+	}
+
+	 if(i32IntegerPart<0)
+	 {
+		 Nokia5110_OutString("-");
+		 i32IntegerPart *= -1;
+	 }
+
+	 //print integer part
+	 Nokia5110_OutUDec_NoSpace((unsigned short)i32IntegerPart);
+
+	 //decimal ppoint
+	 Nokia5110_OutString(".");
+
+	 //fractional part
+	 //leading zeroes if needed
+	 if(i32FractionPart<10)
+		 Nokia5110_OutChar('0');
+	 if(i32FractionPart<100)
+		 Nokia5110_OutChar('0');
+
+	Nokia5110_OutUDec_NoSpace((unsigned short)i32FractionPart);
+
+}
