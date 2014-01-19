@@ -2,17 +2,17 @@
 <java version="1.6.0_13" class="java.beans.XMLDecoder"> 
  <object class="com.ti.dvt.datamodel.solution.SolutionManager$PersistState"> 
   <void property="defaultSolution"> 
-   <string>E:\ti\ccsv5\ccs_base\DebugServer\..\dvt_3.4.0.201304031516\CodeGen\solutions\CodeGenCoverage</string> 
+   <string>E:\ti\ccsv5\ccs_base\DebugServer\..\dvt_3.5.0.201309051307\CodeGen\solutions\CodeGenCoverage</string> 
   </void> 
   <void property="openedSolutions"> 
    <void method="add"> 
-    <string>E:\ti\ccsv5\ccs_base\DebugServer\..\dvt_3.4.0.201304031516\CodeGen\solutions\CodeGenCoverage</string> 
+    <string>E:\ti\ccsv5\ccs_base\DebugServer\..\dvt_3.5.0.201309051307\CodeGen\solutions\CodeGenCoverage</string> 
    </void> 
    <void method="add"> 
-    <string>E:/GitHub/WRFL/Firmware\dvt\AnalysisSolutionsTemp\AnalysisSolution1386199352971\null</string> 
+    <string>E:/GitHub/WRFL/Firmware\dvt\AnalysisSolutionsTemp\AnalysisSolution1388435682034\null</string> 
    </void> 
    <void method="add"> 
-    <string>E:\ti\ccsv5\ccs_base\DebugServer\..\dvt_3.4.0.201304031516\RTA6\solutions\cce_rta6</string> 
+    <string>E:\ti\ccsv5\ccs_base\DebugServer\..\dvt_3.5.0.201309051307\RTA6\solutions\cce_rta6</string> 
    </void> 
   </void> 
  </object> 

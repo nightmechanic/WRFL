@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="installedFeatures">
-		<item value="com.ti.ccstudio.base:5.4.0.00279"/>
-		<item value="com.ti.ccstudio.gui.composer.ccs:1.0.0.201304301100"/>
-		<item value="com.ti.ccstudio:5.3.0.201304301100"/>
+		<item value="com.ti.ccstudio.base:5.5.0.00400"/>
+		<item value="com.ti.ccstudio.gui.composer.ccs:1.0.0.201308270800"/>
+		<item value="com.ti.ccstudio:5.5.0.201308270800"/>
 		<item value="com.ti.cgt.arm.5.0.help:5.0.0.201210291916"/>
+		<item value="com.ti.cgt.arm.5.1.help:5.1.0.201306281501"/>
+		<item value="com.ti.cgt.msp430.4.2.help:4.2.0.201307261542"/>
+		<item value="com.ti.mcu.msp430ware.product.ui:1.40.1.44"/>
+		<item value="com.ti.mcu.msp430ware.product_1.40.1.44:1.40.1.44"/>
+		<item value="com.ti.sdo.grace.product.ui:2.20.1.12"/>
+		<item value="com.ti.sdo.grace.product_2.20.1.12:2.20.1.12"/>
+		<item value="gnu.io.rxtx:2.1.7.4_v20071016-7B57e7UAXMAAqGAGf"/>
 		<item value="org.eclipse.cdt.build.crossgcc:1.1.0.201209170703"/>
 		<item value="org.eclipse.cdt.debug.gdbjtag:7.0.0.201209170703"/>
 		<item value="org.eclipse.cdt.gdb:7.0.0.201209170703"/>
@@ -53,6 +60,8 @@
 		<item value="org.eclipse.rse.telnet:2.3.0.201209191030-775FD3879AE8YB_E8OA4"/>
 		<item value="org.eclipse.rse.terminals:1.2.1.201209191030-773Ep7H8AG8_DZK9Q9252"/>
 		<item value="org.eclipse.rse:3.4.1.201209191030-7L7IFBY83omx__z0RFpKdWB-r5MS"/>
+		<item value="org.eclipse.rtsc.xdctools.product.ui:3.25.3.72"/>
+		<item value="org.eclipse.rtsc.xdctools.product_3.25.3.72:3.25.3.72"/>
 		<item value="org.eclipse.tm.terminal.serial:2.1.100.201209191030-308Z31231A2A2141"/>
 		<item value="org.eclipse.tm.terminal.ssh:2.1.100.201209191030-308Z31231A2A2141"/>
 		<item value="org.eclipse.tm.terminal.telnet:2.1.100.201209191030-308Z31231A2A2141"/>
@@ -71,8 +80,17 @@
 	<section name="SaveAsDialogSettings">
 		<item value="525" key="DIALOG_WIDTH"/>
 		<item value="-2" key="DIALOG_Y_ORIGIN"/>
-		<item value="437" key="DIALOG_X_ORIGIN"/>
 		<item value="579" key="DIALOG_HEIGHT"/>
+		<item value="437" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="true" key="BUILD_NOW"/>
+		<item value="254" key="DIALOG_Y_ORIGIN"/>
+		<item value="true" key="BUILD_ALL"/>
+		<item value="729" key="DIALOG_X_ORIGIN"/>
+		<item value="440" key="DIALOG_HEIGHT"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
 	</section>
 </section>

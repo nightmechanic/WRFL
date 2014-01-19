@@ -35,10 +35,8 @@
 //
 //*****************************************************************************
 
-
-#include <stdint.h>
 #include <stdbool.h>
-
+#include <stdint.h>
 #include "wrfl_proto_mux.h"
 #include "inc/hw_types.h"
 #include "inc/hw_memmap.h"
@@ -59,11 +57,7 @@ PortFunctionInit(void)
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI2);
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
-
-    //
-    // Enable port PB1 for GPIOOutput
-    //
-    MAP_GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_1);
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 
     //
     // Enable port PB0 for GPIOOutput
@@ -71,10 +65,29 @@ PortFunctionInit(void)
     MAP_GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_0);
 
     //
-    // Enable port PA6 for I2C1 I2C1SCL
+    // Enable port PB1 for GPIOOutput
     //
-    MAP_GPIOPinConfigure(GPIO_PA6_I2C1SCL);
-    MAP_GPIOPinTypeI2CSCL(GPIO_PORTA_BASE, GPIO_PIN_6);
+    MAP_GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_1);
+
+    //
+    // Enable port PF0 for GPIOInput
+    //
+
+    //
+    //First open the lock and select the bits we want to modify in the GPIO commit register.
+    //
+    HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+    HWREG(GPIO_PORTF_BASE + GPIO_O_CR) = 0x1;
+
+    //
+    //Now modify the configuration of the pins that we unlocked.
+    //
+    MAP_GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, GPIO_PIN_0);
+
+    //
+    // Enable port PF4 for GPIOInput
+    //
+    MAP_GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, GPIO_PIN_4);
 
     //
     // Enable port PA7 for I2C1 I2C1SDA
@@ -83,10 +96,10 @@ PortFunctionInit(void)
     MAP_GPIOPinTypeI2C(GPIO_PORTA_BASE, GPIO_PIN_7);
 
     //
-    // Enable port PB7 for SSI2 SSI2TX
+    // Enable port PA6 for I2C1 I2C1SCL
     //
-    MAP_GPIOPinConfigure(GPIO_PB7_SSI2TX);
-    MAP_GPIOPinTypeSSI(GPIO_PORTB_BASE, GPIO_PIN_7);
+    MAP_GPIOPinConfigure(GPIO_PA6_I2C1SCL);
+    MAP_GPIOPinTypeI2CSCL(GPIO_PORTA_BASE, GPIO_PIN_6);
 
     //
     // Enable port PB4 for SSI2 SSI2CLK
@@ -99,4 +112,10 @@ PortFunctionInit(void)
     //
     MAP_GPIOPinConfigure(GPIO_PB5_SSI2FSS);
     MAP_GPIOPinTypeSSI(GPIO_PORTB_BASE, GPIO_PIN_5);
+
+    //
+    // Enable port PB7 for SSI2 SSI2TX
+    //
+    MAP_GPIOPinConfigure(GPIO_PB7_SSI2TX);
+    MAP_GPIOPinTypeSSI(GPIO_PORTB_BASE, GPIO_PIN_7);
 }

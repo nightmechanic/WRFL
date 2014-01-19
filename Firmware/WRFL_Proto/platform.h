@@ -18,6 +18,12 @@
 //General
 #define WRFL_XTAL			SYSCTL_XTAL_16MHZ
 
+//Switches
+#define SW_BASE				GPIO_PORTF_BASE
+#define SW1					GPIO_PIN_4
+#define SW2					GPIO_PIN_0
+#define SW_DEBOUNCE_CNT		3
+
 //LCD
 #define LCD_DC_PORT			GPIO_PORTB_BASE
 #define LCD_DC_PIN			GPIO_PIN_1
@@ -28,7 +34,7 @@
 #define BMP180_I2C_INT		INT_I2C1
 
 // local sea level air pressure (for a more accurate absolute altitude measurement)
-#define LOC_ALT_P0				101652.0f
+#define LOC_ALT_P0				102605.0f //101652.0f
 
 //noise values for kalman filter(s)
 

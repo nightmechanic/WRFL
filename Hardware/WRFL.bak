@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 10/31/2013 9:53:33 PM
+EESchema Schematic File Version 2
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,7 +31,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:WRFL
 LIBS:WRFL-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8

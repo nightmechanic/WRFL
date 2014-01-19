@@ -15,9 +15,10 @@ $(GEN_CMDS__FLAG) \
 "./WRFL_Proto.obj" \
 "./WRFL_Kalman.obj" \
 "./Nokia5110.obj" \
+"../tm4c123gh6pm.cmd" \
 -l"E:\ti\TivaWare_C_Series-1.1\driverlib\ccs\Debug\driverlib.lib" \
 -l"libc.a" \
-"../tm4c123gh6pm.cmd" \
+-l"E:\ARM\CMSIS\dsplib-cm4f\CMSIS_DSP_W_CHECK\dsplib-cm4f.lib" \
 
 -include ../makefile.init
 
@@ -122,7 +123,7 @@ all: WRFL_Proto.out
 WRFL_Proto.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"E:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --define=ccs --define=PART_TM4C123GH6PM --define=TARGET_IS_BLIZZARD_RB1 --diag_warning=225 --display_error_number --diag_wrap=off -z --stack_size=256 -m"WRFL_Proto.map" --heap_size=0 -i"E:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"E:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="WRFL_Proto_linkInfo.xml" --rom_model -o "WRFL_Proto.out" $(ORDERED_OBJS)
+	"E:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define=ccs --define=PART_TM4C123GH6PM --define=TARGET_IS_BLIZZARD_RB1 --define=ARM_MATH_CM4 --define=__FPU_PRESENT --diag_warning=225 --diag_wrap=off -z --stack_size=512 -m"WRFL_Proto.map" --heap_size=0 -i"E:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"E:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --reread_libs --verbose_diagnostics --warn_sections --display_error_number --diag_wrap=off --xml_link_info="WRFL_Proto_linkInfo.xml" --rom_model -o "WRFL_Proto.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -138,3 +139,4 @@ clean:
 .SECONDARY:
 
 -include ../makefile.targets
+

@@ -16,8 +16,16 @@ WRFL_Proto.obj: E:/ti/TivaWare_C_Series-1.1/inc/hw_ints.h
 WRFL_Proto.obj: ../wrfl_proto_mux.h
 WRFL_Proto.obj: ../gears_logo.h
 WRFL_Proto.obj: ../WRFL_Kalman.h
+WRFL_Proto.obj: E:/ARM/CMSIS/Include/arm_math.h
+WRFL_Proto.obj: E:/ARM/CMSIS/Include/core_cm4.h
+WRFL_Proto.obj: E:/ARM/CMSIS/Include/core_cmInstr.h
+WRFL_Proto.obj: E:/ARM/CMSIS/Include/cmsis_ccs.h
+WRFL_Proto.obj: E:/ARM/CMSIS/Include/core_cmFunc.h
+WRFL_Proto.obj: E:/ARM/CMSIS/Include/core_cm4_simd.h
+WRFL_Proto.obj: E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/string.h
 WRFL_Proto.obj: E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h
 WRFL_Proto.obj: E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/ymath.h
+WRFL_Proto.obj: E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h
 WRFL_Proto.obj: E:/ti/TivaWare_C_Series-1.1/driverlib/debug.h
 WRFL_Proto.obj: E:/ti/TivaWare_C_Series-1.1/driverlib/interrupt.h
 WRFL_Proto.obj: E:/ti/TivaWare_C_Series-1.1/driverlib/pin_map.h
@@ -46,8 +54,16 @@ E:/ti/TivaWare_C_Series-1.1/inc/hw_ints.h:
 ../wrfl_proto_mux.h: 
 ../gears_logo.h: 
 ../WRFL_Kalman.h: 
+E:/ARM/CMSIS/Include/arm_math.h: 
+E:/ARM/CMSIS/Include/core_cm4.h: 
+E:/ARM/CMSIS/Include/core_cmInstr.h: 
+E:/ARM/CMSIS/Include/cmsis_ccs.h: 
+E:/ARM/CMSIS/Include/core_cmFunc.h: 
+E:/ARM/CMSIS/Include/core_cm4_simd.h: 
+E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/string.h: 
 E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h: 
 E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/ymath.h: 
+E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h: 
 E:/ti/TivaWare_C_Series-1.1/driverlib/debug.h: 
 E:/ti/TivaWare_C_Series-1.1/driverlib/interrupt.h: 
 E:/ti/TivaWare_C_Series-1.1/driverlib/pin_map.h: 

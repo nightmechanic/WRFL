@@ -43,6 +43,12 @@
 //global Kalman filter  structure for altitude
 tKalman_State Alt_KState;
 
+//global switch state
+volatile unsigned char sw_state = 0;
+volatile unsigned char sw1_debounce_count = 0;
+volatile unsigned char sw2_debounce_count = 0;
+
+
 //*****************************************************************************
 //
 // Define BMP180 I2C Address.
@@ -126,17 +132,59 @@ BMP180I2CIntHandler(void)
 void
 SysTickIntHandler()
 {
-  //  GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, GPIO_PIN_1);
-    BMP180DataRead(&g_sBMP180Inst, BMP180AppCallback, &g_sBMP180Inst);
-  //  GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
+	unsigned char sw_pin_status;
+
+	// get pressure data
+	BMP180DataRead(&g_sBMP180Inst, BMP180AppCallback, &g_sBMP180Inst);
+
+	// SW debounce
+	sw_pin_status = ~((unsigned char)(MAP_GPIOPinRead(SW_BASE, (SW1|SW2))));
+
+	if ( (sw_pin_status & SW1) != (sw_state & SW1) ){
+		sw1_debounce_count++;
+		if (sw1_debounce_count >= SW_DEBOUNCE_CNT){
+			sw_state = (sw_state & ~SW1) | (sw_pin_status & SW1);
+			sw1_debounce_count = 0;
+		}
+	}else{
+		sw1_debounce_count = 0;
+	}
+
+	if ( (sw_pin_status & SW2) != (sw_state & SW2) ){
+		sw2_debounce_count++;
+		if (sw2_debounce_count >= SW_DEBOUNCE_CNT){
+			sw_state = (sw_state & ~SW2) | (sw_pin_status & SW2);
+			sw2_debounce_count = 0;
+		}
+	}else{
+		sw2_debounce_count = 0;
+	}
+
+
+
+
+
+
+}
+
+void PlatformInit()
+{
+	PortFunctionInit();
+	//configure SW pins pull-ups
+	MAP_GPIOPadConfigSet(SW_BASE, (SW1|SW2), GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
+
+
+
 }
 
 int main(void) {
 	
 	int  delay;
-	float fTemperature, fPressure, fAltitude, fK_Altitude;
+	float fTemperature, fPressure, fAltitude, fK_Altitude, fAltitude_sum,fK_Altitude_sum;
 	int count,i;
-	static float f_meas[VAR_COUNT], fAlt_Mean, fAlt_Var;
+//	static float f_meas[VAR_COUNT], fAlt_Mean, fAlt_Var;
+	unsigned short sw1_count, sw2_count;
+	unsigned char sw1_was_cleared = 0, sw2_was_cleared = 0;
 
 
 	// Set the clocking to run directly from the external crystal/oscillator.
@@ -145,7 +193,7 @@ int main(void) {
 
 
 	//init ports and peripherals
-	PortFunctionInit();
+	PlatformInit();
 	Nokia5110_Init();
 	Nokia5110_Clear();
 
@@ -206,9 +254,16 @@ int main(void) {
    //
    // Enable the system ticks at 10 hz.
    //
-   MAP_SysTickPeriodSet(MAP_SysCtlClockGet() / (10 * 3));
+   MAP_SysTickPeriodSet(MAP_SysCtlClockGet() / (40 * 3));
    MAP_SysTickIntEnable();
    MAP_SysTickEnable();
+
+
+   Nokia5110_SetCursor(0, 0);
+   Nokia5110_OutString("SW1:");
+
+   Nokia5110_SetCursor(0, 2);
+   Nokia5110_OutString("SW2:");
 
   //config done
    count = 0;
@@ -217,100 +272,99 @@ int main(void) {
    //
    while(1)
    {
-	   //
-	   // Read the data from the BMP180 over I2C.  This command starts a
-	   // temperature measurement.  Then polls until temperature is ready.
-	   // Then automatically starts a pressure measurement and polls for that
-	   // to complete. When both measurement are complete and in the local
-	   // buffer then the application callback is called from the I2C
-	   // interrupt context.  Polling is done on I2C interrupts allowing
-	   // processor to continue doing other tasks as needed.
-	   //
-	   BMP180DataRead(&g_sBMP180Inst, BMP180AppCallback, &g_sBMP180Inst);
-	   while(g_vui8DataFlag == 0)
-	   {
+
+	   // SW1
+	   if (sw_state & SW1){
+		   if (sw1_was_cleared){
+			   sw1_was_cleared = 0;
+			   sw1_count++;
+		   	   Nokia5110_SetCursor(5, 0);
+		   	   Nokia5110_OutUDec(sw1_count);
+		   }
+	   }else
+		   sw1_was_cleared = 1;
+
+	   //SW2
+	   if (sw_state & SW2){
+	   		   if (sw2_was_cleared){
+	   			   sw2_was_cleared = 0;
+	   			   sw2_count++;
+	   		   	   Nokia5110_SetCursor(5, 2);
+	   		   	   Nokia5110_OutUDec(sw2_count);
+	   		   }
+	   	   }else
+	   		   sw2_was_cleared = 1;
+
+	   // handle BMP180 data (display average every 50 samples)
+	   if (g_vui8DataFlag ){
 		   //
-		   // Wait for the new data set to be available.
+		   // Reset the data ready flag.
 		   //
-	   }
+		   g_vui8DataFlag = 0;
 
-	   //
-	   // Reset the data ready flag.
-	   //
-	   g_vui8DataFlag = 0;
+		   //
+		   // Get a local copy of the latest temperature data in float format.
+		   //
+		   BMP180DataTemperatureGetFloat(&g_sBMP180Inst, &fTemperature);
 
-	   //
-	   // Get a local copy of the latest temperature data in float format.
-	   //
-	   BMP180DataTemperatureGetFloat(&g_sBMP180Inst, &fTemperature);
+		   //
+		   // Print temperature with three digits of decimal precision.
+		   //
 
-	   //
-	   // Convert the floats to an integer part and fraction part for easy
-	   // print.
-	   //
+		   //Nokia5110_SetCursor(0, 0);
+		   //Nokia5110_OutString("Temp:");
+		   //Nokia5110_OutFloatp3(fTemperature);
 
+		   //
+		   // Get a local copy of the latest air pressure data in float format.
+		   //
+		   BMP180DataPressureGetFloat(&g_sBMP180Inst, &fPressure);
 
-	   //
-	   // Print temperature with three digits of decimal precision.
-	   //
+	   	   //
+	   	   // Print Pressure with three digits of decimal precision.
+	   	   //
 
-	   Nokia5110_SetCursor(0, 0);
-	       Nokia5110_OutString("Temp:");
+	   	   //Nokia5110_SetCursor(0, 1);
+	   	   // Nokia5110_OutString("Pres:");
+	   	   //Nokia5110_SetCursor(0, 2);
 
-	       Nokia5110_OutFloatp3(fTemperature);
+	   	   //display in hPa
+	   	   //Nokia5110_OutFloatp3((fPressure / 100.0f));
 
-	   //
-	   // Get a local copy of the latest air pressure data in float format.
-	   //
-	   BMP180DataPressureGetFloat(&g_sBMP180Inst, &fPressure);
-
-
-
-
-	   //
-	   // Print Pressure with three digits of decimal precision.
-	   //
-
-	   Nokia5110_SetCursor(0, 1);
-	   Nokia5110_OutString("Pres:");
-	   Nokia5110_SetCursor(0, 2);
-
-	   //display in hPa
-	   Nokia5110_OutFloatp3((fPressure / 100.0f));
-
-	   //
-	   // Calculate the altitude.
-	   //
-	   //fAltitude = 44330.0f * (1.0f - powf(fPressure / 101325.0f,
-	//									   1.0f / 5.255f));
-	   //corrected:
-	   fAltitude = 44330.0f * (1.0f - powf(fPressure / LOC_ALT_P0,
+	   	   //
+	   	   // Calculate the altitude.
+	   	   //
+	   	   //fAltitude = 44330.0f * (1.0f - powf(fPressure / 101325.0f,
+	   	   //									   1.0f / 5.255f));
+	   	   //corrected:
+	   	   fAltitude = 44330.0f * (1.0f - powf(fPressure / LOC_ALT_P0,
 	   										   1.0f / 5.255f));
+	   	   // Kalman filtered altitude
+
+	  	   Kalman_Update (&Alt_KState, fAltitude);
+	  	   fK_Altitude = Alt_KState.X;
 
 
-	   //
-	   // Print altitude with three digits of decimal precision.
-	   //
+	  	   fAltitude_sum += fAltitude;
+	  	   fK_Altitude_sum += fK_Altitude;
+	  	   count++;
 
-	   Nokia5110_SetCursor(0, 3);
-	   Nokia5110_OutString("Alt:");
+	  	   if (count>=50){
+	  		 Nokia5110_SetCursor(0, 3);
+	  		 Nokia5110_OutString("Alt:");
+	  		 Nokia5110_OutFloatp3(fAltitude_sum/50.0);
 
-	   Nokia5110_OutFloatp3(fAltitude);
+	  		 Nokia5110_SetCursor(0, 5);
+	  		 Nokia5110_OutString("KAlt:");
+	  		 Nokia5110_OutFloatp3(fK_Altitude_sum/50.0);
 
-	   // Print Kalman filtered altitude
+	  		fAltitude_sum = 0;
+	  		fK_Altitude_sum = 0;
+	  		count = 0;
+	  	   }
 
-	   Kalman_Update (&Alt_KState, fAltitude);
-	   fK_Altitude = Alt_KState.X;
 
-	  	   //
-	  	   // Print altitude with three digits of decimal precision.
-	  	   //
-
-	  	   Nokia5110_SetCursor(0, 5);
-	  	   Nokia5110_OutString("KAlt:");
-
-	  	 Nokia5110_OutFloatp3(fK_Altitude);
-
+/*
 	  	 //calculate variance
 	  	 f_meas[count]=fK_Altitude;
 	  	 count++;
@@ -344,13 +398,13 @@ int main(void) {
 	  		 count = 0;
 
 	  	 }
-
+*/
 	   //
 	   // Delay to keep printing speed reasonable. About 100msec.
 	   //
-	   MAP_SysCtlDelay(MAP_SysCtlClockGet() / (10 * 3));
-//	   for(delay=0; delay<1000000; delay=delay+1);
+	   //MAP_SysCtlDelay(MAP_SysCtlClockGet() / (10 * 3));
 
+	   }
    }//while end
 }
 
