@@ -1,11 +1,25 @@
 /*
  * WRFL_Kalman.h
- *	Header file for Kalman filter routines
- *	this is for a single dimension, no control Kalman filter
- *	Based on the tutorial from: http://bilgin.esme.org/BitsBytes/KalmanFilterforDummies.aspx
+ * Header file for Kalman filter routines
  *
- *  Created on: Dec 1, 2013
+ *	Created on: Dec 1, 2013
  *  Author: Ran Katz (Nightmechanic)
+ *
+ *	The single dimension functions Kalman_Init and Kalman_Update
+ *	are based on the tutorial from: http://bilgin.esme.org/BitsBytes/KalmanFilterforDummies.aspx
+ *
+ *	The multi-dimension Kalman functions MD_Kalman_Init and MD_Kalman_Update are based
+ *	on the pykalman python library in: https://github.com/pykalman/pykalman,
+ *	and specifically on the standard Kalman filter implementation in the standard.py  file
+ *
+ *	The pykalman library is released under the following license:
+ *	New BSD License
+ *	Copyright (c) 2012 Daniel Duckworth.
+ *	All rights reserved.
+ *
+ * (I would like to thank Daniel Duckworth for his great Kalman library that helped better understand
+ * the Kalman filter, was used to simulate the apogee detection for teh WRFL project and is the basis
+ * for this MD_Kalman implementation)
  *
  * This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
  * To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/deed.en_US.
@@ -41,6 +55,7 @@ typedef struct {
 	arm_matrix_instance_f32 mfTransitionMatrix_T; // A transposed
 	arm_matrix_instance_f32 mfTransitionCovariance; //Q
 	arm_matrix_instance_f32 mfObservationMatrix; // H or C
+	arm_matrix_instance_f32 mfObservationMatrix_T; // H or C transposed
 	arm_matrix_instance_f32 mfObservationCovariance; //R
 	arm_matrix_instance_f32 mfGain; //K
 
@@ -53,6 +68,7 @@ extern void MD_Kalman_Init(tMD_Kalman_State *pKState,
 									float *pfTransitionMatrix_T,
 									float *pfTransitionCovariance,
 									float *pfObservationMatrix,
+									float *pfObservationMatrix_T,
 									float *pfObservationCovariance,
 									float *pfGain);
 

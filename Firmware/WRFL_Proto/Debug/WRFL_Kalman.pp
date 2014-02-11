@@ -17,6 +17,7 @@ WRFL_Kalman.obj: E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/string.h
 WRFL_Kalman.obj: E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h
 WRFL_Kalman.obj: E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/ymath.h
 WRFL_Kalman.obj: ../WRFL_Kalman.h
+WRFL_Kalman.obj: ../Nokia5110.h
 
 ../WRFL_Kalman.c: 
 E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/stdbool.h: 
@@ -35,3 +36,4 @@ E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/string.h:
 E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h: 
 E:/ti/ccsv5/tools/compiler/arm_5.0.4/include/ymath.h: 
 ../WRFL_Kalman.h: 
+../Nokia5110.h: 
