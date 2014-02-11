@@ -1,1 +1,0 @@
-"./wrfl_proto_mux.obj" "./startup_ccs.obj" "./i2cm_drv.obj" "./bmp180.obj" "./WRFL_Proto.obj" "./WRFL_Kalman.obj" "./Nokia5110.obj" "../tm4c123gh6pm.cmd" -l"E:\ti\TivaWare_C_Series-1.1\driverlib\ccs\Debug\driverlib.lib" -l"libc.a" -l"E:\ARM\CMSIS\dsplib-cm4f\CMSIS_DSP_W_CHECK\dsplib-cm4f.lib" 
